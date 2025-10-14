@@ -2,9 +2,15 @@
 <?AutomationStudio WorkingVersion="6.3" FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
   <Module Name="5ACCIF01.FPLK-000" Type="5ACCIF01.FPLK-000" Version="1.9.0.0">
+    <Connection Connector="PLK2" TargetModule="8AC114.60-2" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
     <Connection Connector="SL" TargetModule="5PPC2200_AL14_000" TargetConnector="SL1" />
+    <Parameter ID="Supervision" Value="off" />
   </Module>
-  <Module Name="5AP1120.121E-000" Type="5AP1120.121E-000" Version="2.1.0.0" />
+  <Module Name="5AP1120.121E-000" Type="5AP1120.121E-000" Version="2.1.0.0">
+    <Parameter ID="Supervision" Value="off" />
+  </Module>
   <Module Name="5PPC2200_AL14_000" Type="5PPC2200.AL14-000" Version="2.0.7.0">
     <Connection Connector="SY" TargetModule="5AP1120.121E-000" TargetConnector="SY1" />
     <Connector Name="IF3">
@@ -28,10 +34,13 @@
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="USER" />
     <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+    <Parameter ID="ActivateWebServer" Value="1" />
+    <Parameter ID="WebServerProtocol" Value="1" />
+    <Parameter ID="ActivateSdm" Value="1" />
   </Module>
   <Module Name="8AC114.60-2" Type="8AC114.60-2" Version="2.2.0.0">
     <Connection Connector="SS" TargetModule="8V1010.00-2" TargetConnector="SS1" />
-    <Connection Connector="PLK1" TargetModule="5ACCIF01.FPLK-000" TargetConnector="IF1">
+    <Connection Connector="PLK1" TargetModule="5ACCIF01.FPLK-000" TargetConnector="PLK2">
       <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
     </Connection>
     <Connection Connector="PLK2" TargetModule="8AC114.60-2_a" TargetConnector="PLK1">
@@ -50,12 +59,15 @@
   <Module Name="8AC126.60-1_a" Type="8AC126.60-1" Version="2.2.0.0">
     <Connection Connector="SS" TargetModule="8V1010.00-2_a" TargetConnector="SS2" />
   </Module>
-  <Module Name="8LVA13.B1030D000-0" Type="8LVA13.B1030D000-0" Version="2.2.0.4">
+  <Module Name="8AC130.60-1" Type="8AC130.60-1" Version="2.2.0.1">
+    <Connection Connector="SS" TargetModule="8V1010.00-2_a" TargetConnector="SS3" />
+  </Module>
+  <Module Name="8LVA13.B1015D000-0" Type="8LVA13.B1015D000-0" Version="2.2.0.4">
     <Connection Connector="EC" TargetModule="8AC126.60-1" TargetConnector="EC" />
     <Connection Connector="MT" TargetModule="8V1010.00-2" TargetConnector="MT1" />
     <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
   </Module>
-  <Module Name="8LVA13.B1030D000-0_a" Type="8LVA13.B1030D000-0" Version="2.2.0.4">
+  <Module Name="8LVA13.B1015D000-0_a" Type="8LVA13.B1015D000-0" Version="2.2.0.4">
     <Connection Connector="EC" TargetModule="8AC126.60-1_a" TargetConnector="EC" />
     <Connection Connector="MT" TargetModule="8V1010.00-2_a" TargetConnector="MT1" />
     <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
