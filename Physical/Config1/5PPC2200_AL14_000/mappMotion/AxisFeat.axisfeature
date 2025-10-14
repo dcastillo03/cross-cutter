@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="CrossCutter" Type="axisfeature">
+    <Selector ID="Type">
+      <Group ID="CommonParameters">
+        <Group ID="Master">
+          <Selector ID="MasterSource">
+            <Property ID="AxisReference" Value="Master" />
+          </Selector>
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
+</Configuration>

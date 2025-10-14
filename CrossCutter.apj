@@ -7,7 +7,10 @@
   <Motion RestartAcoposParameter="true" RestartInitParameter="true" />
   <Variables DefaultInitValue="0" DefaultRetain="false" DefaultVolatile="true" />
   <TechnologyPackages>
-    <mappMotion McDriveLog="6.3.2" Version="6.3.2" />
+    <mappCockpit Version="6.3.1" />
+    <mappMotion McAcpDrv="6.3.2" McAcpSim="6.3.2" McAcpSys="6.3.2" McDriveLog="6.3.2" Version="6.3.2" />
+    <mappServices Version="6.3.4" />
+    <mappView Version="6.3.2" />
     <OpcUaCs Version="6.3.1" />
   </TechnologyPackages>
 </Project>

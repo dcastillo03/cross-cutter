@@ -1,0 +1,6 @@
+VAR
+	Conveyor : MpAxisBasic;
+	ConveyorPar : MpAxisBasicParType;
+	Slicer : MpAxisBasic;
+	SlicerPar : MpAxisBasicParType;
+END_VAR
