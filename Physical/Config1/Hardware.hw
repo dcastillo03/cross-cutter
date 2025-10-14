@@ -1,11 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio WorkingVersion="6.3" FileVersion="4.9"?>
 <Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="5ACCIF01.FPLK-000" Type="5ACCIF01.FPLK-000" Version="1.9.0.0">
+    <Connection Connector="SL" TargetModule="5PPC2200_AL14_000" TargetConnector="SL1" />
+  </Module>
   <Module Name="5AP1120.121E-000" Type="5AP1120.121E-000" Version="2.1.0.0" />
   <Module Name="5PPC2200_AL14_000" Type="5PPC2200.AL14-000" Version="2.0.7.0">
     <Connection Connector="SY" TargetModule="5AP1120.121E-000" TargetConnector="SY1" />
+    <Connector Name="IF3">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="Mode" Value="Manual" />
+      <Parameter ID="InternetAddress" Value="192.168.68.70" />
+      <Parameter ID="SubnetMask" Value="255.255.255.0" />
+    </Connector>
+    <Connector Name="IF4">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+      <Parameter ID="ActivateDevice" Value="1" />
+    </Connector>
+    <Connector Name="IF5">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Connector Name="IF6">
+      <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="CrossCutter_Config1" />
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="USER" />
     <Parameter ID="FileDevicePath1" Value="USER_PATH" />
   </Module>
+  <Module Name="8AC114.60-2" Type="8AC114.60-2" Version="2.2.0.0">
+    <Connection Connector="SS" TargetModule="8V1010.00-2" TargetConnector="SS1" />
+    <Connection Connector="PLK1" TargetModule="5ACCIF01.FPLK-000" TargetConnector="IF1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+    <Connection Connector="PLK2" TargetModule="8AC114.60-2_a" TargetConnector="PLK1">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+  </Module>
+  <Module Name="8AC114.60-2_a" Type="8AC114.60-2" Version="2.2.0.0">
+    <Connection Connector="SS" TargetModule="8V1010.00-2_a" TargetConnector="SS1" />
+    <Connection Connector="PLK1" TargetModule="8AC114.60-2" TargetConnector="PLK2">
+      <Cable Type="PowerlinkCable" Length="10" Version="1.0.0.3" />
+    </Connection>
+  </Module>
+  <Module Name="8AC126.60-1" Type="8AC126.60-1" Version="2.2.0.0">
+    <Connection Connector="SS" TargetModule="8V1010.00-2" TargetConnector="SS2" />
+  </Module>
+  <Module Name="8AC126.60-1_a" Type="8AC126.60-1" Version="2.2.0.0">
+    <Connection Connector="SS" TargetModule="8V1010.00-2_a" TargetConnector="SS2" />
+  </Module>
+  <Module Name="8LVA13.B1030D000-0" Type="8LVA13.B1030D000-0" Version="2.2.0.4">
+    <Connection Connector="EC" TargetModule="8AC126.60-1" TargetConnector="EC" />
+    <Connection Connector="MT" TargetModule="8V1010.00-2" TargetConnector="MT1" />
+    <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
+  </Module>
+  <Module Name="8LVA13.B1030D000-0_a" Type="8LVA13.B1030D000-0" Version="2.2.0.4">
+    <Connection Connector="EC" TargetModule="8AC126.60-1_a" TargetConnector="EC" />
+    <Connection Connector="MT" TargetModule="8V1010.00-2_a" TargetConnector="MT1" />
+    <Parameter ID="MOTOR_AMB_TEMP_RATED" Location="M1/MotorParameters" Value="40" />
+  </Module>
+  <Module Name="8V1010.00-2" Type="8V1010.00-2" Version="2.3.0.1" />
+  <Module Name="8V1010.00-2_a" Type="8V1010.00-2" Version="2.3.0.1" />
 </Hardware>
