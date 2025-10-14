@@ -3,4 +3,7 @@ VAR
 	ConveyorPar : MpAxisBasicParType;
 	Slicer : MpAxisBasic;
 	SlicerPar : MpAxisBasicParType;
+	Sequencer : MpAxisCamSequencer;
+	SequencerPar : MpAxisCamSequencerParType;
+	TouchProbe : MC_BR_TouchProbe;
 END_VAR

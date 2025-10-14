@@ -2,10 +2,13 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Configuration>
   <Element ID="Master" Type="axis">
-    <Selector ID="BaseType" Value="Linear" />
+    <Selector ID="BaseType" Value="Rotary" />
     <Selector ID="Alarms" Value="MpAlarmX" />
   </Element>
   <Element ID="Slave" Type="axis">
+    <Selector ID="BaseType">
+      <Property ID="CountDirection" Value="Inverse" />
+    </Selector>
     <Selector ID="Alarms" Value="MpAlarmX" />
   </Element>
 </Configuration>

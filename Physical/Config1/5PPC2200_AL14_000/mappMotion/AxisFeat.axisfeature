@@ -10,6 +10,40 @@
           </Selector>
         </Group>
       </Group>
+      <Group ID="States">
+        <Selector ID="State0">
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="InputTrigger1PositiveEdge" />
+              <Property ID="NextState" Value="1" />
+            </Group>
+          </Group>
+        </Selector>
+        <Group ID="State[1]">
+          <Selector ID="Cam" Value="Predefined" />
+          <Property ID="MasterFactor" Value="4330" />
+          <Property ID="SlaveFactor" Value="2000" />
+          <Selector ID="CompensationMode" Value="DistancesBetweenCams">
+            <Property ID="MasterDistance" Value="205.4" />
+            <Property ID="SlaveDistance" Value="170" />
+          </Selector>
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="StateEnd" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="2" />
+            </Group>
+          </Group>
+        </Group>
+        <Group ID="State[2]">
+          <Selector ID="Cam" Value="Predefined" />
+          <Property ID="SlaveFactor" Value="0" />
+          <Selector ID="CompensationMode" Value="DistancesBetweenCams">
+            <Property ID="MasterDistance" Value="0" />
+            <Property ID="SlaveDistance" Value="170" />
+          </Selector>
+        </Group>
+      </Group>
     </Selector>
   </Element>
 </Configuration>
