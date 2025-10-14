@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio WorkingVersion="6.3" FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="5AP1120.121E-000" Type="5AP1120.121E-000" Version="2.1.0.0" />
+  <Module Name="5PPC2200_AL14_000" Type="5PPC2200.AL14-000" Version="2.0.7.0">
+    <Connection Connector="SY" TargetModule="5AP1120.121E-000" TargetConnector="SY1" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="USER" />
+    <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+  </Module>
+</Hardware>
