@@ -7,7 +7,8 @@
         <Group ID="Master">
           <Selector ID="MasterSource">
             <Property ID="AxisReference" Value="Master" />
-            <Property ID="MaxVelocity" Value="6000" />
+            <Property ID="ValueSource" Value="ActualPosition" />
+            <Property ID="MaxVelocity" Value="39600" />
           </Selector>
         </Group>
       </Group>
@@ -15,50 +16,38 @@
         <Selector ID="State0">
           <Group ID="Events">
             <Group ID="Event[0]">
-              <Property ID="Type" Value="NextTwoDefinedEventsOccure" />
-              <Property ID="NextState" Value="1" />
-            </Group>
-            <Group ID="Event[1]">
-              <Property ID="Type" Value="MasterStartPosition" />
-            </Group>
-            <Group ID="Event[2]">
               <Property ID="Type" Value="Signal1FromPLC" />
-              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="1" />
             </Group>
           </Group>
         </Selector>
         <Group ID="State[1]">
           <Selector ID="Cam" Value="Predefined" />
-          <Property ID="MasterFactor" Value="4330" />
+          <Property ID="MasterFactor" Value="2000" />
           <Property ID="SlaveFactor" Value="2000" />
           <Selector ID="CompensationMode" Value="DistancesBetweenCams">
-            <Property ID="MasterDistance" Value="211.9" />
+            <Property ID="MasterDistance" Value="90" />
             <Property ID="SlaveDistance" Value="170" />
           </Selector>
           <Group ID="Events">
             <Group ID="Event[0]">
-              <Property ID="Type" Value="Signal1FromPLC" />
+              <Property ID="Type" Value="Signal2FromPLC" />
               <Property ID="Transition" Value="EndOfState" />
               <Property ID="NextState" Value="2" />
-            </Group>
-            <Group ID="Event[1]">
-              <Property ID="Type" Value="StateEnd" />
-              <Property ID="Transition" Value="EndOfState" />
-              <Property ID="NextState" Value="3" />
             </Group>
           </Group>
         </Group>
         <Group ID="State[2]">
           <Selector ID="Cam" Value="Predefined" />
-          <Property ID="MasterFactor" Value="4330" />
+          <Property ID="MasterFactor" Value="2000" />
           <Property ID="SlaveFactor" Value="2000" />
           <Selector ID="CompensationMode" Value="DistancesBetweenCams">
-            <Property ID="MasterDistance" Value="108.1" />
+            <Property ID="MasterDistance" Value="52" />
             <Property ID="SlaveDistance" Value="340" />
           </Selector>
           <Group ID="Events">
             <Group ID="Event[0]">
-              <Property ID="Type" Value="Signal1FromPLC" />
+              <Property ID="Type" Value="Signal3FromPLC" />
               <Property ID="Transition" Value="EndOfState" />
               <Property ID="NextState" Value="2" />
             </Group>
@@ -68,6 +57,7 @@
           <Selector ID="Cam" Value="Predefined">
             <Property ID="PredefinedCam" Value="ZeroPoint" />
           </Selector>
+          <Property ID="SlaveFactor" Value="0" />
           <Selector ID="CompensationMode" Value="DistancesBetweenCams">
             <Property ID="MasterDistance" Value="0" />
             <Property ID="SlaveDistance" Value="170" />

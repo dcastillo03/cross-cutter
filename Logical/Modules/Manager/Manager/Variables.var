@@ -8,4 +8,5 @@ VAR
 	TouchProbe : MC_BR_TouchProbe;
 	PrevCounter : UDINT;
 	Pulse : BOOL;
+	StateOneReset : BOOL;
 END_VAR
