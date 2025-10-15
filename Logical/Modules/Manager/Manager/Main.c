@@ -12,7 +12,7 @@ void _INIT ProgramInit(void)
 	Conveyor.Parameters = &ConveyorPar;
 	Conveyor.Enable = 1;
 	
-	ConveyorPar.Velocity = 25;
+	ConveyorPar.Velocity = 20;
 	ConveyorPar.Acceleration = 1000;
 	ConveyorPar.Deceleration = 1000;
 	
@@ -27,8 +27,8 @@ void _INIT ProgramInit(void)
 
 	TouchProbe.Axis = &Master;
 	TouchProbe.TriggerInput.EventSource = mcEVENT_SRC_TRIGGER1;
-	TouchProbe.Period = 140;
-	TouchProbe.WindowPositive = 135;
+	TouchProbe.Period = 45;
+	TouchProbe.WindowPositive = 40;
 	TouchProbe.Mode = mcTP_MODE_SHIFT_FROM_RESULT;
 
 }
@@ -68,7 +68,7 @@ void _CYCLIC ProgramCyclic(void)
 				Sequencer.Signal1 = 1;
 				break;
 			case 1:
-				Sequencer.Signal2 = 1;
+				Sequencer.Signal4 = 1;
 				break;
 			case 2:
 				Sequencer.Signal3 = 1;
