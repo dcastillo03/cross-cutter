@@ -77,7 +77,8 @@
     <Parameter ID="AxisReference" Location="DriveConfiguration/Channel[1]/RealAxis" Value="Slave" />
     <Parameter ID="ProportionalGain" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="266" />
     <Parameter ID="ProportionalGain" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Speed" Value="0.35" />
-    <Parameter ID="PositionError" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="1000" />
+    <Parameter ID="PositionError" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="500" />
+    <Parameter ID="VelocityErrorMonitoring" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="NotUsed" />
     <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[1]/RealAxis/AxisFeatures" Value="CrossCutter" />
   </Module>
   <Module Name="8V1010.00-2_a" Type="8V1010.00-2" Version="2.3.0.1">

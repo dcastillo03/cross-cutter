@@ -24,12 +24,12 @@ void _INIT ProgramInit(void)
 	Sequencer.MpLink = &Slave;
 	Sequencer.Parameters = &SequencerPar;
 	Sequencer.Enable = 1;
-	
-	TouchProbe.Enable = 1;
+
 	TouchProbe.Axis = &Master;
 	TouchProbe.TriggerInput.EventSource = mcEVENT_SRC_TRIGGER1;
-	TouchProbe.Period = 140.0;
-	
+	TouchProbe.Period = 140;
+	TouchProbe.WindowPositive = 135;
+	TouchProbe.Mode = mcTP_MODE_SHIFT_FROM_RESULT;
 
 }
 
@@ -53,13 +53,18 @@ void _CYCLIC ProgramCyclic(void)
 	
 	if (TouchProbe.ValidTriggerCount > PrevCounter) {
 		Pulse = 1;
+		if (Pulse) {
+			Sequencer.Signal1 = 1;
+		}
 	} else {
 		Pulse = 0;
+		Sequencer.Signal1 = 0;
 	}
+	
 
 	
 	
-
+	// Assignments
 	PrevCounter = TouchProbe.ValidTriggerCount;
 	MpAxisBasic(&Conveyor);
 	MpAxisBasic(&Slicer);
