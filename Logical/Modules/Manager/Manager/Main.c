@@ -12,7 +12,7 @@ void _INIT ProgramInit(void)
 	Conveyor.Parameters = &ConveyorPar;
 	Conveyor.Enable = 1;
 	
-	ConveyorPar.Velocity = 65;
+	ConveyorPar.Velocity = 25;
 	ConveyorPar.Acceleration = 1000;
 	ConveyorPar.Deceleration = 1000;
 	
