@@ -7,6 +7,8 @@
         <Group ID="Master">
           <Selector ID="MasterSource">
             <Property ID="AxisReference" Value="Master" />
+            <Property ID="ValueSource" Value="ActualPosition" />
+            <Property ID="MaxVelocity" Value="6000" />
           </Selector>
         </Group>
       </Group>
@@ -14,7 +16,7 @@
         <Selector ID="State0">
           <Group ID="Events">
             <Group ID="Event[0]">
-              <Property ID="Type" Value="InputTrigger1PositiveEdge" />
+              <Property ID="Type" Value="Signal1FromPLC" />
               <Property ID="NextState" Value="1" />
             </Group>
           </Group>
@@ -42,6 +44,12 @@
             <Property ID="MasterDistance" Value="0" />
             <Property ID="SlaveDistance" Value="170" />
           </Selector>
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="StateEnd" />
+              <Property ID="Transition" Value="EndOfState" />
+            </Group>
+          </Group>
         </Group>
       </Group>
     </Selector>

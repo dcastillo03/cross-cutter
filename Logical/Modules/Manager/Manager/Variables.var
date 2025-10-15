@@ -6,4 +6,6 @@ VAR
 	Sequencer : MpAxisCamSequencer;
 	SequencerPar : MpAxisCamSequencerParType;
 	TouchProbe : MC_BR_TouchProbe;
+	PrevCounter : UDINT;
+	Pulse : BOOL;
 END_VAR
