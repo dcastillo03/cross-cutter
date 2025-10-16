@@ -1,0 +1,5 @@
+VAR
+	TheConveyor : ConveyorType; (*Conveyor object*)
+	TheSlicer : SlicerType; (*Slicer object*)
+	TheSequencer : SequencerType; (*Sequencer object*)
+END_VAR
