@@ -38,7 +38,7 @@
           <Property ID="MasterFactor" Value="2000" />
           <Property ID="SlaveFactor" Value="2000" />
           <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
-            <Property ID="MasterDistance" Value="85" />
+            <Property ID="MasterDistance" Value="89" />
             <Property ID="SlaveDistance" Value="170" />
           </Selector>
           <Group ID="Events">
