@@ -30,7 +30,7 @@ void _INIT ProgramInit(void)
 	// Initialization of TouchProbe for mark detection
 	TheConveyor.Devices.Probe.Axis = &Master;
 	TheConveyor.Devices.Probe.TriggerInput.EventSource = mcEVENT_SRC_TRIGGER1;
-	TheConveyor.Devices.Probe.Period = 70;
+	TheConveyor.Devices.Probe.Period = 70.0;
 	TheConveyor.Devices.Probe.WindowNegative = 5.0;
 	TheConveyor.Devices.Probe.WindowPositive = 5.0;
 	TheConveyor.Devices.Probe.AdvancedParameters.UseFirstTriggerPosition = 1;
