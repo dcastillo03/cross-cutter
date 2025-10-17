@@ -17,8 +17,10 @@
     <Widget xsi:type="widgets.brease.NumericOutput" id="CutsNumericOutput" top="540" left="140" zIndex="13" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="MarksNumericOutput" top="580" left="140" zIndex="14" />
     <Widget xsi:type="widgets.brease.Label" id="AvgDistanceLabel" top="660" left="40" width="140" zIndex="15" text="Avg Mark Dist:" fontSize="16px" bold="false" italic="false" underline="false" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="DIstanceNumericOutput" top="660" left="140" zIndex="16" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="AvgDIstanceNumericOutput" top="660" left="140" zIndex="16" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
     <Widget xsi:type="widgets.brease.Label" id="MarksSkippedLabel" top="620" left="40" width="140" zIndex="17" text="Marks Skipped:" fontSize="16px" bold="false" italic="false" underline="false" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="MarksSkippedNumericOutput" top="620" left="140" zIndex="18" />
+    <Widget xsi:type="widgets.brease.Label" id="MarkDistanceLabel" top="700" left="40" width="140" zIndex="19" text="Mark Distance:" fontSize="16px" bold="false" italic="false" underline="false" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="DIstanceNumericOutput" top="700" left="140" zIndex="20" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
   </Widgets>
 </Content>

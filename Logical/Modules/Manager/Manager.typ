@@ -19,7 +19,8 @@ TYPE
 	ConveyorParType : 	STRUCT 
 		HolesCounted : UDINT; (*Integer value of all the holes accounted for but not yet sliced*)
 		AxisPar : MpAxisBasicParType; (*Contains MpAxisBasic parameters for the conveyor*)
-		AvgMarkDistance : LREAL;
+		AvgMarkDistance : LREAL; (*Average distance between marks in millimeters*)
+		CurrentMarkDistance : LREAL;
 	END_STRUCT;
 	SlicerParType : 	STRUCT 
 		SuccessfulCuts : UDINT; (*Integer value of all the holes successfully sliced at*)

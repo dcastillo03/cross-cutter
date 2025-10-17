@@ -39,6 +39,11 @@ void _INIT ProgramInit(void)
 	// Initializatin of TouchProbe for successful cut detection
 	TheSlicer.Devices.Probe.Axis = &Slave;
 	TheSlicer.Devices.Probe.TriggerInput.EventSource = mcEVENT_SRC_TRIGGER1;
+	TheSlicer.Devices.Probe.Period = 70.0;
+	TheSlicer.Devices.Probe.WindowNegative = 5.0;
+	TheSlicer.Devices.Probe.WindowPositive = 5.0;
+	TheSlicer.Devices.Probe.AdvancedParameters.UseFirstTriggerPosition = 1;
+	TheSlicer.Devices.Probe.Mode = mcTP_MODE_SHIFT_FROM_RESULT;
 
 }
 
@@ -86,9 +91,13 @@ void _CYCLIC ProgramCyclic(void)
 		TheSlicer.Devices.Probe.Enable = 1;
 	}
 	
+	PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+	
 	// If a new hole is detected send a "pulse" to Signal #.
 	if  ((TheConveyor.Devices.Probe.ValidTriggerCount > TheConveyor.Par.HolesCounted)
 		&& TheSlicer.Status.Active) {
+		
+		CurrentMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
 		
 		// Evalute current sequencer state, enabled/disable respective signals
 		switch (TheSequencer.Sequencer.ActualStateIndex) {
@@ -132,6 +141,7 @@ void _CYCLIC ProgramCyclic(void)
 	TheSlicer.Par.SuccessfulCuts = TheSlicer.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.HolesCounted = TheConveyor.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.AvgMarkDistance = TheConveyor.Devices.Probe.RecordedValue / TheConveyor.Par.HolesCounted;
+	TheConveyor.Par.CurrentMarkDistance = CurrentMarkDistance - PreviousMarkDistance;
 	
 	// FUBs calls
 	MpAxisBasic(&TheConveyor.Devices.Axis);
