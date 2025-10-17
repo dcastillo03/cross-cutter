@@ -6,5 +6,6 @@
     <Object Type="Package" Description="Snippets">Snippets</Object>
     <Object Type="Package" Description="Themes">Themes</Object>
     <Object Type="Package" Description="Media">Media</Object>
+    <Object Type="File">Project.language</Object>
   </Objects>
 </Package>

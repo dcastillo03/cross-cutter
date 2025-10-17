@@ -16,6 +16,7 @@
   </DataObjects>
   <NcDataObjects>
     <NcDataObject Name="McDriveLog" Source="" Memory="UserROM" Language="Binary" />
+    <NcDataObject Name="AcpParTab" Source="Modules.AcpParTab.dob" Memory="UserROM" Language="Apt" />
   </NcDataObjects>
   <Binaries>
     <BinaryObject Name="ArSvcReg" Source="" Memory="UserROM" Language="Binary" />

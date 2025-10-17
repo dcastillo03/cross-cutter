@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="File">AxisConfig.axis</Object>
     <Object Type="File">AxisFeat.axisfeature</Object>
+    <Object Type="File">ParTable.axisfeature</Object>
   </Objects>
 </Package>

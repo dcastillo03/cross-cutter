@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" 
+          creationtoolversion="4.2" 
+          datatype="unknown" segtype="sentence" 
+          adminlang="en-US" srclang="en" o-tmf="TMX">
+    <note>
+      Change the empty value of the following prop-element to the namespace where this text module should
+      be located within the logical structure of your texts (e.g.: MyTexts/Alarms)
+    </note>
+	<prop type="x-BR-TS:Namespace">Localization/Units/User</prop>
+  </header>
+  <body>
+    <tu tuid="4543793.Name">
+      <tuv xml:lang="en">
+        <seg>My unit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Einheit</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Mon unité</seg>
+      </tuv>
+    </tu>
+	<tu tuid="4543793.Sym">
+      <tuv xml:lang="en">
+        <seg>Unit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Einheit</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Unité</seg>
+      </tuv>
+    </tu>
+	<tu tuid="4543793.Desc">
+      <tuv xml:lang="en">
+        <seg>My description</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Meine Beschreibung</seg>
+      </tuv>
+      <tuv xml:lang="fr">
+        <seg>Ma description</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

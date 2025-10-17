@@ -9,10 +9,19 @@
   <EventBindingsSets />
   <EventScriptsSets />
   <Dialogs />
-  <Contents />
+  <Contents>
+    <Content refId="LoginHeader" />
+    <Content refId="LoginAreaContent" />
+    <Content refId="NavContent" />
+    <Content refId="LoginInfoCont" />
+  </Contents>
   <SnippetsSets />
   <VariablesSets />
   <ExpressionsSets />
+  <StartTheme themeRefId="BuRThemeFlatDark" />
+  <Themes>
+    <Theme refId="BuRThemeFlatDark" />
+  </Themes>
   <Configurations>
     <Configuration key="activityCount" value="false" />
     <Gestures>
