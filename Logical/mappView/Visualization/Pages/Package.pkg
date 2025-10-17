@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="Package">Login</Object>
     <Object Type="Package">GlobalAreaContents</Object>
+    <Object Type="Package">Automatic</Object>
   </Objects>
 </Package>

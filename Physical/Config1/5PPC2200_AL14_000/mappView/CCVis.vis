@@ -3,6 +3,7 @@
   <StartPage pageRefId="LoginPage" />
   <Pages>
     <Page refId="LoginPage" />
+    <Page refId="AutoPage" />
   </Pages>
   <Navigations />
   <BindingsSets />
@@ -14,6 +15,9 @@
     <Content refId="LoginAreaContent" />
     <Content refId="NavContent" />
     <Content refId="LoginInfoCont" />
+    <Content refId="AutoHeader" />
+    <Content refId="AutoAreaContent" />
+    <Content refId="AutoInfoContent" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
