@@ -127,6 +127,7 @@ void _CYCLIC ProgramCyclic(void)
 		PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
 	} else if (TheSequencer.Sequencer.InCompensation) {
 		CurrentMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+		TheConveyor.Par.CurrentMarkDistance = CurrentMarkDistance - PreviousMarkDistance;
 	}
 	
 	// Enable/disable conveyor and slicer
@@ -146,7 +147,6 @@ void _CYCLIC ProgramCyclic(void)
 	TheSlicer.Par.SuccessfulCuts = TheSlicer.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.HolesCounted = TheConveyor.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.AvgMarkDistance = TheConveyor.Devices.Probe.RecordedValue / TheConveyor.Par.HolesCounted;
-	TheConveyor.Par.CurrentMarkDistance = CurrentMarkDistance - PreviousMarkDistance;
 	
 	// FUBs calls
 	MpAxisBasic(&TheConveyor.Devices.Axis);
