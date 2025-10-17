@@ -91,13 +91,11 @@ void _CYCLIC ProgramCyclic(void)
 		TheSlicer.Devices.Probe.Enable = 1;
 	}
 	
-	PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
 	
 	// If a new hole is detected send a "pulse" to Signal #.
 	if  ((TheConveyor.Devices.Probe.ValidTriggerCount > TheConveyor.Par.HolesCounted)
 		&& TheSlicer.Status.Active) {
 		
-		CurrentMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
 		
 		// Evalute current sequencer state, enabled/disable respective signals
 		switch (TheSequencer.Sequencer.ActualStateIndex) {
@@ -125,6 +123,13 @@ void _CYCLIC ProgramCyclic(void)
 		}
 	}
 	
+	if (TheSequencer.Sequencer.InCam) {
+		PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+	} else if (TheSequencer.Sequencer.InCompensation) {
+		CurrentMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+	}
+	
+	// Enable/disable conveyor and slicer
 	if (TheConveyor.Cmd.Enable) {
 		TheConveyor.Status.Active = 1;
 	} else {

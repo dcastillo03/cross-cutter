@@ -33,5 +33,9 @@
       <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.AvgMarkDistance" attribute="value" />
       <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="AvgDIstanceNumericOutput" attribute="value" />
     </Binding>
-  </Bindings>
+  <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.CurrentMarkDistance" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="DIstanceNumericOutput" attribute="value" />
+</Binding>
+</Bindings>
 </BindingsSet>
