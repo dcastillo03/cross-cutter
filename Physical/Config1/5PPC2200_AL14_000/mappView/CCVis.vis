@@ -9,6 +9,7 @@
   <Navigations />
   <BindingsSets>
     <BindingsSet refId="AutoAreaContent" />
+    <BindingsSet refId="ManualAreaContent" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="EventBindings" />

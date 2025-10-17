@@ -118,6 +118,7 @@ void _CYCLIC ProgramCyclic(void)
 		}
 	}
 	
+	// Calculate distance between one cut
 	if (TheSequencer.Sequencer.InCam) {
 		PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
 	} else if (TheSequencer.Sequencer.InCompensation) {
