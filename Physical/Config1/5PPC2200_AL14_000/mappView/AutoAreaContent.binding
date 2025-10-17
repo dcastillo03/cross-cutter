@@ -9,5 +9,30 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:TheSlicer.Cmd.Enable" attribute="value" />
 <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="SlicerToggleButton" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSlicer.Par.SuccessfulCuts" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="CutsNumericOutput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Probe.ValidTriggerCount" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="MarksNumericOutput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Probe.WindowPositive" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="PositiveWindowNumInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Probe.WindowNegative" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="NegativeWindowNumInput" attribute="value" />
+</Binding>
+
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Probe.MissedTriggerCount" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="MarksSkippedNumericOutput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.AvgMarkDistance" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="DIstanceNumericOutput" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

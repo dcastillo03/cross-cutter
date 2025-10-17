@@ -131,6 +131,7 @@ void _CYCLIC ProgramCyclic(void)
 	// Assignments
 	TheSlicer.Par.SuccessfulCuts = TheSlicer.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.HolesCounted = TheConveyor.Devices.Probe.ValidTriggerCount;
+	TheConveyor.Par.AvgMarkDistance = TheConveyor.Devices.Probe.RecordedValue / TheConveyor.Par.HolesCounted;
 	
 	// FUBs calls
 	MpAxisBasic(&TheConveyor.Devices.Axis);

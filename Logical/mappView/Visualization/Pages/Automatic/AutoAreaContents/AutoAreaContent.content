@@ -13,8 +13,12 @@
     <Widget xsi:type="widgets.brease.ToggleButton" id="StartStopToggleButton" top="60" left="40" width="180" height="80" zIndex="9" image="Media/SymbolLib/Media/Play.svg" mouseDownImage="Media/SymbolLib/Media/Stop.svg" mouseDownText="Stop" text="Start" imageHeight="100" imageWidth="50" cornerRadius="10px" backColor="rgba(124, 252, 0, 1)" textColor="rgba(0, 0, 0, 1)" mouseDownBackColor="rgba(255, 0, 0, 1)" mouseDownTextColor="rgba(0, 0, 0, 1)" bold="true" checkedBackColor="rgba(255, 0, 0, 1)" />
     <Widget xsi:type="widgets.brease.Label" id="SensorParLabel" top="500" left="40" width="220" zIndex="10" text="Sensor Parameters" fontSize="20px" bold="true" underline="false" />
     <Widget xsi:type="widgets.brease.Label" id="CutsLabel" top="540" left="40" width="140" zIndex="11" text="Successful Cuts:" fontSize="16px" bold="false" italic="false" underline="false" />
-    <Widget xsi:type="widgets.brease.Label" id="HolesLabel" top="580" left="40" width="140" zIndex="12" text="Holes Seen:" fontSize="16px" bold="false" italic="false" underline="false" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="CutsNumericOutput" top="540" left="120" zIndex="13" />
-    <Widget xsi:type="widgets.brease.NumericOutput" id="HolesNumericOutput" top="580" left="120" zIndex="14" />
+    <Widget xsi:type="widgets.brease.Label" id="MarksLabel" top="580" left="40" width="140" zIndex="12" text="Marks Seen:" fontSize="16px" bold="false" italic="false" underline="false" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="CutsNumericOutput" top="540" left="140" zIndex="13" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="MarksNumericOutput" top="580" left="140" zIndex="14" />
+    <Widget xsi:type="widgets.brease.Label" id="AvgDistanceLabel" top="660" left="40" width="140" zIndex="15" text="Avg Mark Dist:" fontSize="16px" bold="false" italic="false" underline="false" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="DIstanceNumericOutput" top="660" left="140" zIndex="16" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
+    <Widget xsi:type="widgets.brease.Label" id="MarksSkippedLabel" top="620" left="40" width="140" zIndex="17" text="Marks Skipped:" fontSize="16px" bold="false" italic="false" underline="false" />
+    <Widget xsi:type="widgets.brease.NumericOutput" id="MarksSkippedNumericOutput" top="620" left="140" zIndex="18" />
   </Widgets>
 </Content>
