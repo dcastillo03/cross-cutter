@@ -39,11 +39,6 @@ void _INIT ProgramInit(void)
 	// Initializatin of TouchProbe for successful cut detection
 	TheSlicer.Devices.Probe.Axis = &Slave;
 	TheSlicer.Devices.Probe.TriggerInput.EventSource = mcEVENT_SRC_TRIGGER1;
-	TheSlicer.Devices.Probe.Period = 70.0;
-	TheSlicer.Devices.Probe.WindowNegative = 5.0;
-	TheSlicer.Devices.Probe.WindowPositive = 5.0;
-	TheSlicer.Devices.Probe.AdvancedParameters.UseFirstTriggerPosition = 1;
-	TheSlicer.Devices.Probe.Mode = mcTP_MODE_SHIFT_FROM_RESULT;
 
 }
 

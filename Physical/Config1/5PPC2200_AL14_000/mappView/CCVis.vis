@@ -4,6 +4,7 @@
   <Pages>
     <Page refId="LoginPage" />
     <Page refId="AutoPage" />
+    <Page refId="ManualPage" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -22,6 +23,9 @@
     <Content refId="AutoHeader" />
     <Content refId="AutoAreaContent" />
     <Content refId="AutoInfoContent" />
+    <Content refId="ManualHeader" />
+    <Content refId="ManualAreaContent" />
+    <Content refId="ManualInfoContent" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
