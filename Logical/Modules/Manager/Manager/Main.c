@@ -44,12 +44,15 @@ void _INIT ProgramInit(void)
 
 void _CYCLIC ProgramCyclic(void)
 {
-	// Power on conveyor and slicer if FUBs are active
-	if (!TheConveyor.Devices.Axis.PowerOn && TheConveyor.Devices.Axis.Active) {
+	
+	// Power on conveyor and slicer if FUBs are active and start button pressed
+	if (!TheConveyor.Devices.Axis.PowerOn && TheConveyor.Devices.Axis.Active 
+		&& TheConveyor.Status.Active) {
 		TheConveyor.Devices.Axis.Power = 1;
 	}
 	
-	if (!TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.Active) {
+	if (!TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.Active 
+		&& TheSlicer.Status.Active) {
 		TheSlicer.Devices.Axis.Power = 1;
 	}
 	
@@ -97,6 +100,18 @@ void _CYCLIC ProgramCyclic(void)
 				TheSequencer.Sequencer.Signal3 = 0;
 				break;
 		}
+	}
+	
+	if (TheConveyor.Cmd.Enable) {
+		TheConveyor.Status.Active = 1;
+	} else {
+		TheConveyor.Status.Active = 0;
+	}
+	
+	if (TheSlicer.Cmd.Enable) {
+		TheSlicer.Status.Active = 1;
+	} else {
+		TheSlicer.Status.Active = 0;
 	}
 	
 	// Assignments

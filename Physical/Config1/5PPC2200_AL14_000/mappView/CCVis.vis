@@ -6,7 +6,9 @@
     <Page refId="AutoPage" />
   </Pages>
   <Navigations />
-  <BindingsSets />
+  <BindingsSets>
+    <BindingsSet refId="AutoAreaContent" />
+  </BindingsSets>
   <EventBindingsSets />
   <EventScriptsSets />
   <Dialogs />

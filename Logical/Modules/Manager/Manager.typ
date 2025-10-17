@@ -3,10 +3,14 @@ TYPE
 	ConveyorType : 	STRUCT 
 		Devices : DevicesType; (*Contains either the axis or the probe.*)
 		Par : ConveyorParType; (*Contains the axis parameters and other misc. parameters.*)
+		Cmd : CmdType;
+		Status : StatusType;
 	END_STRUCT;
 	SlicerType : 	STRUCT 
 		Devices : DevicesType; (*Contains either the axis or the probe.*)
 		Par : SlicerParType; (*Contains the axis parameters and other misc. parameters.*)
+		Cmd : CmdType;
+		Status : StatusType;
 	END_STRUCT;
 	DevicesType : 	STRUCT 
 		Axis : MpAxisBasic; (*MpAxisBasic FUB for master/slave*)
@@ -23,5 +27,11 @@ TYPE
 	SequencerType : 	STRUCT 
 		Sequencer : MpAxisCamSequencer; (*MpAxisCamSequencer FUB*)
 		Par : MpAxisCamSequencerParType; (*Parameters for MpAxisCamSequencer*)
+	END_STRUCT;
+	CmdType : 	STRUCT 
+		Enable : BOOL; (*Enable the conveyor/slicer*)
+	END_STRUCT;
+	StatusType : 	STRUCT 
+		Active : BOOL; (*Status if enabled*)
 	END_STRUCT;
 END_TYPE

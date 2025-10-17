@@ -4,5 +4,6 @@
   <Objects>
     <Object Type="File">Config.mappviewcfg</Object>
     <Object Type="File">CCVis.vis</Object>
+    <Object Type="File">AutoAreaContent.binding</Object>
   </Objects>
 </Package>

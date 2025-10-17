@@ -1,0 +1,3 @@
+VAR
+	Start : BOOL;
+END_VAR
