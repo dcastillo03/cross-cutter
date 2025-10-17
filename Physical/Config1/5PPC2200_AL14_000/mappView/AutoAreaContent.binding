@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="AutoAreaContent" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
-
-
-
-
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Cmd.Enable" attribute="value" />
-<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="StartStopToggleButton" attribute="value" />
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Cmd.Enable" attribute="value" />
+      <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="ConveyorToggleButton" attribute="value" />
+    </Binding>
+  <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSlicer.Cmd.Enable" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="SlicerToggleButton" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

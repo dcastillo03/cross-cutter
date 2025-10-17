@@ -9,7 +9,9 @@
   <BindingsSets>
     <BindingsSet refId="AutoAreaContent" />
   </BindingsSets>
-  <EventBindingsSets />
+  <EventBindingsSets>
+    <EventBindingsSet refId="EventBindings" />
+  </EventBindingsSets>
   <EventScriptsSets />
   <Dialogs />
   <Contents>

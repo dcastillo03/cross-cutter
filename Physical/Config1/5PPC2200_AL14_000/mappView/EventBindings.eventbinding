@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EventBindingSet id="EventBindings" xmlns="http://www.br-automation.com/iat2014/eventbinding/v2" xmlns:types="http://www.br-automation.com/iat2015/widgetTypes/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Bindings>
+    <EventBinding id="EventBinding_1">
+      <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="AutoAreaContent" widgetRefId="StartStopToggleButton" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.ToggleButton.Action" contentRefId="AutoAreaContent" widgetRefId="ConveyorToggleButton">
+            <Method xsi:type="widgets.brease.ToggleButton.Action.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.ToggleButton.Action" contentRefId="AutoAreaContent" widgetRefId="SlicerToggleButton">
+            <Method xsi:type="widgets.brease.ToggleButton.Action.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.ToggleButton.Action" contentRefId="AutoAreaContent" widgetRefId="StartStopToggleButton">
+            <Method xsi:type="widgets.brease.ToggleButton.Action.SetVisible" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.ToggleButton.Action" contentRefId="AutoAreaContent" widgetRefId="SlicerToggleButton">
+            <Method xsi:type="widgets.brease.ToggleButton.Action.SetVisible" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+  </Bindings>
+</EventBindingSet>

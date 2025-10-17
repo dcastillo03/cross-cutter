@@ -7,7 +7,6 @@
         <Group ID="Master">
           <Selector ID="MasterSource">
             <Property ID="AxisReference" Value="Master" />
-            <Property ID="ValueSource" Value="ActualPosition" />
             <Property ID="MaxVelocity" Value="39600" />
           </Selector>
           <Property ID="StartPosition" Value="35" />
@@ -38,7 +37,7 @@
           <Property ID="MasterFactor" Value="2000" />
           <Property ID="SlaveFactor" Value="2000" />
           <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
-            <Property ID="MasterDistance" Value="89" />
+            <Property ID="MasterDistance" Value="88.5" />
             <Property ID="SlaveDistance" Value="170" />
           </Selector>
           <Group ID="Events">
@@ -59,7 +58,7 @@
           <Property ID="MasterFactor" Value="2000" />
           <Property ID="SlaveFactor" Value="2000" />
           <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
-            <Property ID="MasterDistance" Value="50.115" />
+            <Property ID="MasterDistance" Value="50.1" />
             <Property ID="SlaveDistance" Value="340" />
           </Selector>
           <Group ID="Events">
@@ -80,7 +79,7 @@
           <Property ID="MasterFactor" Value="2000" />
           <Property ID="SlaveFactor" Value="2000" />
           <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
-            <Property ID="MasterDistance" Value="50.115" />
+            <Property ID="MasterDistance" Value="50.1" />
             <Property ID="SlaveDistance" Value="340" />
           </Selector>
           <Group ID="Events">
