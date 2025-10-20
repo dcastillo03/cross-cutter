@@ -6,5 +6,6 @@
     <Object Type="Package">GlobalAreaContents</Object>
     <Object Type="Package">Automatic</Object>
     <Object Type="Package">Manual</Object>
+    <Object Type="Package">Alarms</Object>
   </Objects>
 </Package>

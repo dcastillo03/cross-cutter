@@ -5,6 +5,7 @@
     <Page refId="LoginPage" />
     <Page refId="AutoPage" />
     <Page refId="ManualPage" />
+    <Page refId="Alarms" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -27,6 +28,9 @@
     <Content refId="ManualHeader" />
     <Content refId="ManualAreaContent" />
     <Content refId="ManualInfoContent" />
+    <Content refId="AlarmsHeader" />
+    <Content refId="AlarmsAreaContent" />
+    <Content refId="AlarmsInfoContent" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
