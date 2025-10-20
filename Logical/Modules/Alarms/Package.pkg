@@ -2,8 +2,6 @@
 <?AutomationStudio FileVersion="4.9"?>
 <Package xmlns="http://br-automation.co.at/AS/Package">
   <Objects>
-    <Object Type="DataObject" Language="Apt">AcpParTab</Object>
-    <Object Type="Package">Manager</Object>
-    <Object Type="Package">Alarms</Object>
+    <Object Type="Program" Language="ANSIC">Alarms</Object>
   </Objects>
 </Package>
