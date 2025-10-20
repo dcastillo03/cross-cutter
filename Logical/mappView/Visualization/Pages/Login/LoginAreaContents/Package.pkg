@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Package SubType="AreaContentsPackage" PackageType="AreaContentsPackage" xmlns="http://br-automation.co.at/AS/Package">
+  <Objects>
+    <Object Type="File">LoginHeader.content</Object>
+    <Object Type="File">LoginAreaContent.content</Object>
+    <Object Type="File">LoginInfoCont.content</Object>
+  </Objects>
+</Package>

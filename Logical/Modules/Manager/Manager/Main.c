@@ -12,7 +12,7 @@ void _INIT ProgramInit(void)
 	TheConveyor.Devices.Axis.Parameters = &TheConveyor.Par.AxisPar;
 	TheConveyor.Devices.Axis.Enable = 1;
 	
-	TheConveyor.Par.AxisPar.Velocity = 55;
+	TheConveyor.Par.AxisPar.Velocity = 100;
 	TheConveyor.Par.AxisPar.Acceleration = 1000;
 	TheConveyor.Par.AxisPar.Deceleration = 1000;
 	
@@ -44,34 +44,53 @@ void _INIT ProgramInit(void)
 
 void _CYCLIC ProgramCyclic(void)
 {
-	// Power on conveyor and slicer if FUBs are active
-	if (!TheConveyor.Devices.Axis.PowerOn && TheConveyor.Devices.Axis.Active) {
+	
+	// Stop conveyor and slicer
+	if (!TheConveyor.Status.Active) {
+		TheConveyor.Devices.Axis.Home = 0;
+		TheConveyor.Devices.Axis.MoveVelocity = 0;
+	}
+	
+	if (!TheSlicer.Status.Active) {
+		TheSlicer.Devices.Axis.Home = 0;
+	}
+	
+	// Power on conveyor and slicer if FUBs are active and start button pressed
+	if (!TheConveyor.Devices.Axis.PowerOn && TheConveyor.Devices.Axis.Active 
+		&& TheConveyor.Status.Active) {
 		TheConveyor.Devices.Axis.Power = 1;
 	}
 	
-	if (!TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.Active) {
+	if (!TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.Active 
+		&& TheSlicer.Status.Active) {
 		TheSlicer.Devices.Axis.Power = 1;
 	}
 	
 	// Home conveyor and slicer if they are powered
-	if (TheConveyor.Devices.Axis.PowerOn && !TheConveyor.Devices.Axis.IsHomed) {
+	if (TheConveyor.Devices.Axis.PowerOn && !TheConveyor.Devices.Axis.IsHomed
+		&& TheConveyor.Status.Active) {
 		TheConveyor.Devices.Axis.Home = 1;
+		
 	}
 
-	if (TheSlicer.Devices.Axis.PowerOn && !TheSlicer.Devices.Axis.IsHomed) {
+	if (TheSlicer.Devices.Axis.PowerOn && !TheSlicer.Devices.Axis.IsHomed
+		&& TheSlicer.Status.Active) {
 		TheSlicer.Devices.Axis.Home = 1;
 	}
 	
 	// Move velocity conveyor once homed
-	if (TheConveyor.Devices.Axis.IsHomed && TheSlicer.Devices.Axis.IsHomed) {
+	if (TheConveyor.Devices.Axis.IsHomed && TheConveyor.Status.Active) {
 		TheConveyor.Devices.Axis.MoveVelocity = 1;
 		TheSequencer.Sequencer.StartSequence = 1;
 		TheConveyor.Devices.Probe.Enable = 1;
 		TheSlicer.Devices.Probe.Enable = 1;
 	}
 	
+	
 	// If a new hole is detected send a "pulse" to Signal #.
-	if (TheConveyor.Devices.Probe.ValidTriggerCount > TheConveyor.Par.HolesCounted) {
+	if  ((TheConveyor.Devices.Probe.ValidTriggerCount > TheConveyor.Par.HolesCounted)
+		&& TheSlicer.Status.Active) {
+		
 		
 		// Evalute current sequencer state, enabled/disable respective signals
 		switch (TheSequencer.Sequencer.ActualStateIndex) {
@@ -99,9 +118,31 @@ void _CYCLIC ProgramCyclic(void)
 		}
 	}
 	
+	// Calculate distance between one cut
+	if (TheSequencer.Sequencer.InCam) {
+		PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+	} else if (TheSequencer.Sequencer.InCompensation) {
+		CurrentMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+		TheConveyor.Par.CurrentMarkDistance = CurrentMarkDistance - PreviousMarkDistance;
+	}
+	
+	// Enable/disable conveyor and slicer
+	if (TheConveyor.Cmd.Enable) {
+		TheConveyor.Status.Active = 1;
+	} else {
+		TheConveyor.Status.Active = 0;
+	}
+	
+	if (TheSlicer.Cmd.Enable) {
+		TheSlicer.Status.Active = 1;
+	} else {
+		TheSlicer.Status.Active = 0;
+	}
+	
 	// Assignments
 	TheSlicer.Par.SuccessfulCuts = TheSlicer.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.HolesCounted = TheConveyor.Devices.Probe.ValidTriggerCount;
+	TheConveyor.Par.AvgMarkDistance = TheConveyor.Devices.Probe.RecordedValue / TheConveyor.Par.HolesCounted;
 	
 	// FUBs calls
 	MpAxisBasic(&TheConveyor.Devices.Axis);

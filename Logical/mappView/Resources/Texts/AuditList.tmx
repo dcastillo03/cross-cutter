@@ -1,0 +1,1241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4">
+  <header creationtool="B&amp;R Automation Studio" creationtoolversion="4.2" datatype="unknown" segtype="sentence" adminlang="en" srclang="en" o-tmf="TMX">
+    <note>Do not change the namespace of this file, as it cannot be found by the widget then</note>
+    <prop type="x-BR-TS:Namespace">IAT/Widgets/AuditList</prop>
+  </header>
+  <body>
+    <tu tuid="filter.title">
+      <tuv xml:lang="fr">
+        <seg>Configuration du filtrage des listes d'audit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Konfigurationsdialog zum Filtern der Auditliste</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Configuration dialogue to filter the audits</seg>
+      </tuv>
+    </tu>
+    <tu tuid="filter.col">
+      <tuv xml:lang="fr">
+        <seg>Colonne</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Spalte</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Column</seg>
+      </tuv>
+    </tu>
+    <tu tuid="filter.op">
+      <tuv xml:lang="fr">
+        <seg>Opérateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Operator</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Operator</seg>
+      </tuv>
+    </tu>
+    <tu tuid="filter.val">
+      <tuv xml:lang="fr">
+        <seg>Valeur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Wert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Value</seg>
+      </tuv>
+    </tu>
+    <tu tuid="filter.or">
+      <tuv xml:lang="fr">
+        <seg>ou</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>oder</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>or</seg>
+      </tuv>
+    </tu>
+    <tu tuid="filter.and">
+      <tuv xml:lang="fr">
+        <seg>et</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>und</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>and</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.title">
+      <tuv xml:lang="fr">
+        <seg>Configuration pour le tri des luist d'audit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Konfigurationsdialog zum Sortieren der Auditliste</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Configuration dialog to sort the audits</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.col">
+      <tuv xml:lang="fr">
+        <seg>Colonne</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Spalte</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Column</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.sort">
+      <tuv xml:lang="fr">
+        <seg>Trier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Sortieren</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Sort</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.by">
+      <tuv xml:lang="fr">
+        <seg>Par</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Nach</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>By</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.first">
+      <tuv xml:lang="fr">
+        <seg>Premier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Zuerst</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>First</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.then">
+      <tuv xml:lang="fr">
+        <seg>puis</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>dann</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>then</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.inc">
+      <tuv xml:lang="fr">
+        <seg>croissant</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>aufsteigend</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>increasing</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.dec">
+      <tuv xml:lang="fr">
+        <seg>décroissant</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>absteigend</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>decreasing</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.az">
+      <tuv xml:lang="fr">
+        <seg>A à Z</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>A - Z</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>A - Z</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.za">
+      <tuv xml:lang="fr">
+        <seg>Z à A</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Z - A</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Z - A</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.old">
+      <tuv xml:lang="fr">
+        <seg>vieux</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>älteste</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>oldest first</seg>
+      </tuv>
+    </tu>
+    <tu tuid="sort.new">
+      <tuv xml:lang="fr">
+        <seg>nouveau</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>neueste</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>newest first</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.title">
+      <tuv xml:lang="fr">
+        <seg>Configuration du style des listes d'audit</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Konfigurationsdialog zum Stylen der Auditliste</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Configuration dialogue to style the audits</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.style">
+      <tuv xml:lang="fr">
+        <seg>Définir le style</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Style festlegen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Set style</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.state">
+      <tuv xml:lang="fr">
+        <seg>si audit est</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>wenn audit ist</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>if audit is</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1">
+      <tuv xml:lang="fr">
+        <seg>Log-Event</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Log-Event</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Log-Event</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au2">
+      <tuv xml:lang="fr">
+        <seg>Diagnostic local</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Lokale Diagnostik</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Local diagnostic</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au50">
+      <tuv xml:lang="fr">
+        <seg>Changement d'état d'alarme interne</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Interne Alarmstatusänderung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Alarm state change internal</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au100">
+      <tuv xml:lang="fr">
+        <seg>Connexion utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer angemeldet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User log in</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au101">
+      <tuv xml:lang="fr">
+        <seg>Déconnexion de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer abgemeldet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User log out</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au102">
+      <tuv xml:lang="fr">
+        <seg>Délai de déconnexion de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerabmeldung Zeitüberschreitung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User log out timeout</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au103">
+      <tuv xml:lang="fr">
+        <seg>Mot de passe de verrouillage de l'utilisateur erroné</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer gesperrt, falsches Passwort</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User lock wrong password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au104">
+      <tuv xml:lang="fr">
+        <seg>Mot de passe de changement d'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerpasswort geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User change password</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au105">
+      <tuv xml:lang="fr">
+        <seg>L'utilisateur modifie ses propres données</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Eigene Benutzerdaten editiert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User edit own data</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au106">
+      <tuv xml:lang="fr">
+        <seg>Échec de la connexion de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzeranmeldung gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User login failed</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au107">
+      <tuv xml:lang="fr">
+        <seg>Échec du changement de mot de passe de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerpasswort ändern gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User change password fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au108">
+      <tuv xml:lang="fr">
+        <seg>Échec de la modification de ses propres données par l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Eigene Benutzerdaten editieren gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User edit own data fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au150">
+      <tuv xml:lang="fr">
+        <seg>Ajouter un utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer hinzugefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User add</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au151">
+      <tuv xml:lang="fr">
+        <seg>Modification des données utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerdaten editiert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User data edit</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au152">
+      <tuv xml:lang="fr">
+        <seg>ajouter un rôle d'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerrolle hinzugefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User role add</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au153">
+      <tuv xml:lang="fr">
+        <seg>Supprimer le rôle d'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerrolle entfernt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User role remove</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au154">
+      <tuv xml:lang="fr">
+        <seg>Supprimer l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User delete</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au155">
+      <tuv xml:lang="fr">
+        <seg>Désactiver l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer deaktiviert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User deactivate</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au156">
+      <tuv xml:lang="fr">
+        <seg>Verrouillage de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer gesperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User lock</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au157">
+      <tuv xml:lang="fr">
+        <seg>Déverrouillage de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer entsperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User unlock</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au158">
+      <tuv xml:lang="fr">
+        <seg>Réinitialisation du mot de passe utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerpasswort zurückgesetzt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User password reset</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au159">
+      <tuv xml:lang="fr">
+        <seg>Échec de l'ajout de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer hinzufügen gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User add fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au160">
+      <tuv xml:lang="fr">
+        <seg>Échec de la modification des données utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerdaten editieren gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User data edit fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au161">
+      <tuv xml:lang="fr">
+        <seg>Échec de la suppression de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer löschen gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User delete fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au162">
+      <tuv xml:lang="fr">
+        <seg>Échec de la désactivation de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer deaktivieren gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User deactivation fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au163">
+      <tuv xml:lang="fr">
+        <seg>Échec du verrouillage de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer sperren gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User lock fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au164">
+      <tuv xml:lang="fr">
+        <seg>Échec du déverrouillage de l'utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer entsperren gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User unlock fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au165">
+      <tuv xml:lang="fr">
+        <seg>aÉchec de la réinitialisation du mot de passe utilisateur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzerpasswort zurücksetzen gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>User password reset fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au166">
+      <tuv xml:lang="fr">
+        <seg>Ajouter un rôle</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rolle hinzugefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Role add</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au167">
+      <tuv xml:lang="fr">
+        <seg>Modifier le rôle</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rolle editiert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Role edit</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au168">
+      <tuv xml:lang="fr">
+        <seg>Suppression de rôle</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rolle gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Role delete</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au169">
+      <tuv xml:lang="fr">
+        <seg>Échec de l'ajout de rôle</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rolle hinzufügen gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Role add fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au170">
+      <tuv xml:lang="fr">
+        <seg>Échec de la modification du rôle</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rolle editieren gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Role edit fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au171">
+      <tuv xml:lang="fr">
+        <seg>Échec de la suppression du rôle</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rolle löschen gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Role delete fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au300">
+      <tuv xml:lang="fr">
+        <seg>Importer</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Import</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Import</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au301">
+      <tuv xml:lang="fr">
+        <seg>Exporter</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Export</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Export</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au302">
+      <tuv xml:lang="fr">
+        <seg>Échec de l'importation</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Import gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Import fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au303">
+      <tuv xml:lang="fr">
+        <seg>Échec de l'exportation</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Export gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Export fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au350">
+      <tuv xml:lang="fr">
+        <seg>Signature électronique ok</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Elektronische Unterschrift in Ordnung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Electronic signature ok</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au351">
+      <tuv xml:lang="fr">
+        <seg>Échec de la signature électronique</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Elektronische Unterschrift gescheitert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Electronic signature fail</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au352">
+      <tuv xml:lang="fr">
+        <seg>Abandon de la signature électronique</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Elektronische Unterschrift abgebrochen</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Electronic signature abort</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au353">
+      <tuv xml:lang="fr">
+        <seg>Erreur fatale de signature électronique</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Elektronische Unterschrift kritischer Fehler</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Electronic signature fatal error</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au400">
+      <tuv xml:lang="fr">
+        <seg>Changement de valeur</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Wertänderung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Value Change</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au401">
+      <tuv xml:lang="fr">
+        <seg>Changement de valeur VC4</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Wertänderung VC4</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Value Change VC4</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au402">
+      <tuv xml:lang="fr">
+        <seg>Événement personnalisé</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Benutzer Event</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Custom Event</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au403">
+      <tuv xml:lang="fr">
+        <seg>Début de lot</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Batch startet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Batch Start</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au404">
+      <tuv xml:lang="fr">
+        <seg>Archives des audits</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Audit archiviert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Audit Archive</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au405">
+      <tuv xml:lang="fr">
+        <seg>Effacer l'événement de tampon</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Speicher glöscht Event</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Clear buffer event</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au500">
+      <tuv xml:lang="fr">
+        <seg>Changement de valeur OPCUA</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>OPCUA Wertänderung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>OPCUA Value Change</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au600">
+      <tuv xml:lang="fr">
+        <seg>Changement d'état d'alarme</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Alarmstatusänderung</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Alarm state change</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au700">
+      <tuv xml:lang="fr">
+        <seg>Commencer à charger la recette</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rezept laden gestartet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Start load recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au701">
+      <tuv xml:lang="fr">
+        <seg>Recette de fin de chargement</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rezept laden beendet</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>End load recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au702">
+      <tuv xml:lang="fr">
+        <seg>Enregistrer la recette</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rezept gespeichert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Save recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au703">
+      <tuv xml:lang="fr">
+        <seg>Renommer la recette</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rezeptname geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Rename recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au704">
+      <tuv xml:lang="fr">
+        <seg>Supprimer la recette</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Rezept gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Delete recipe</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au800">
+      <tuv xml:lang="fr">
+        <seg>Changement de mode</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Modus geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Mode change</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au801">
+      <tuv xml:lang="fr">
+        <seg>Changement d'état</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Status geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>State change</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au802">
+      <tuv xml:lang="fr">
+        <seg>Changement de sous-état</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Substatus geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Substate change</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au900">
+      <tuv xml:lang="fr">
+        <seg>Création de démarrage de sauvegarde</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Startbackup erzeugt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Backup start create</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au901">
+      <tuv xml:lang="fr">
+        <seg>Fin de sauvegarde créer</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Endbackup erzeugt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Backup end create</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au902">
+      <tuv xml:lang="fr">
+        <seg>Installation de sauvegarde</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Backup installiert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Backup install</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1000">
+      <tuv xml:lang="fr">
+        <seg>Créer une boîte à code</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Codebox erzeugt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Codebox create</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1001">
+      <tuv xml:lang="fr">
+        <seg>Suppression de la boîte de code</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Codebox gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Codebox delete</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1002">
+      <tuv xml:lang="fr">
+        <seg>Changement de codebox</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Codebox geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Codebox change</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1003">
+      <tuv xml:lang="fr">
+        <seg>Importation de la boîte de code</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Codebox importiert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Codebox import</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1100">
+      <tuv xml:lang="fr">
+        <seg>Création de fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei erzeugt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File create</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1101">
+      <tuv xml:lang="fr">
+        <seg>Fichier écrasé</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei überschrieben</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File overwritten</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1102">
+      <tuv xml:lang="fr">
+        <seg>Fichier ajouté</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei angehängt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File append</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1103">
+      <tuv xml:lang="fr">
+        <seg>Suppression de fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File delete</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1104">
+      <tuv xml:lang="fr">
+        <seg>Renommer le fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Dateiname geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File rename</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1105">
+      <tuv xml:lang="fr">
+        <seg>Copier/coller de fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei kopiert / eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File copy / paste</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1106">
+      <tuv xml:lang="fr">
+        <seg>Fichier couper/coller</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei ausgeschnitten / eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File cut / paste</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1107">
+      <tuv xml:lang="fr">
+        <seg>Verrouillage de fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei gesperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File lock</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1108">
+      <tuv xml:lang="fr">
+        <seg>Déverrouillage de fichier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Datei entsperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>File unlock</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1150">
+      <tuv xml:lang="fr">
+        <seg>Création de dossier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordner erzeugt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder create</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1151">
+      <tuv xml:lang="fr">
+        <seg>Dossier écrasé</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordner überschrieben</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder overwritten</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1152">
+      <tuv xml:lang="fr">
+        <seg>Suppression de dossier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordner gelöscht</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder delete</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1153">
+      <tuv xml:lang="fr">
+        <seg>Renommer le dossier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordnername geändert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder rename</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1154">
+      <tuv xml:lang="fr">
+        <seg>Copier/coller de dossier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordner kopiert / eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder copy / paste</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1155">
+      <tuv xml:lang="fr">
+        <seg>Dossier couper/coller</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordner ausgeschnitten / eingefügt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder cut / paste</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1156">
+      <tuv xml:lang="fr">
+        <seg>Verrouillage du dossier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordner gesperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder lock</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1157">
+      <tuv xml:lang="fr">
+        <seg>Déverrouillage de dossier</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Ordner entsperrt</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Folder unlock</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style.au1200">
+      <tuv xml:lang="fr">
+        <seg>Matériel importé</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>Hardware importiert</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>Hardware import</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style1">
+      <tuv xml:lang="fr">
+        <seg>style1</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style1</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style1</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style2">
+      <tuv xml:lang="fr">
+        <seg>style2</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style2</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style2</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style3">
+      <tuv xml:lang="fr">
+        <seg>style3</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style3</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style3</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style4">
+      <tuv xml:lang="fr">
+        <seg>style4</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style4</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style4</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style5">
+      <tuv xml:lang="fr">
+        <seg>style5</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style5</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style5</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style6">
+      <tuv xml:lang="fr">
+        <seg>style6</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style6</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style6</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style7">
+      <tuv xml:lang="fr">
+        <seg>style7</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style7</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style7</seg>
+      </tuv>
+    </tu>
+    <tu tuid="style8">
+      <tuv xml:lang="fr">
+        <seg>style8</seg>
+      </tuv>
+      <tuv xml:lang="de">
+        <seg>style8</seg>
+      </tuv>
+      <tuv xml:lang="en">
+        <seg>style8</seg>
+      </tuv>
+    </tu>
+  </body>
+</tmx>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio FileVersion="4.9"?>
+<Configuration>
+  <Element ID="gAlarmXCore" Type="mpalarmxcore">
+    <Group ID="mapp.Gen">
+      <Property ID="Enable" Value="TRUE" />
+      <Property ID="EnableCockpit" Value="TRUE" />
+      <Property ID="TaskClass" Value="4" />
+      <Property ID="Parent" />
+    </Group>
+    <Selector ID="mapp.AlarmX.Create" Value="Disabled" />
+    <Group ID="mapp.AlarmX.Core.Retain">
+      <Selector ID="Memory" Value="0" />
+    </Group>
+  </Element>
+</Configuration>

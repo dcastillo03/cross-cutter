@@ -35,6 +35,12 @@
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="USER" />
     <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+    <Group ID="FileDevice2" />
+    <Parameter ID="FileDeviceName2" Value="AlarmHistory" />
+    <Parameter ID="FileDevicePath2" Value="USER_PATH/AlarmHistory" />
+    <Group ID="FileDevice3" />
+    <Parameter ID="FileDeviceName3" Value="Recipes" />
+    <Parameter ID="FileDevicePath3" Value="USER_PATH/Recipes" />
     <Parameter ID="ActivateWebServer" Value="1" />
     <Parameter ID="WebServerProtocol" Value="1" />
     <Parameter ID="ActivateSdm" Value="1" />
@@ -82,6 +88,7 @@
     <Parameter ID="VelocityErrorMonitoring" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="UserDefined" />
     <Parameter ID="VelocityError" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits/VelocityErrorMonitoring" Value="350" />
     <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[1]/RealAxis/AxisFeatures" Value="CrossCutter" />
+    <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[1]/ChannelFeatures" Value="Feature_AcpParTable" />
   </Module>
   <Module Name="8V1010.00-2_a" Type="8V1010.00-2" Version="2.3.0.1">
     <Parameter ID="PowerSupply" Location="DriveConfiguration/Module" Value="ETA" />
@@ -90,5 +97,6 @@
     <Parameter ID="ProportionalGain" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Position" Value="265" />
     <Parameter ID="ProportionalGain" Location="DriveConfiguration/Channel[1]/RealAxis/Controller/Mode/Speed" Value="0.35" />
     <Parameter ID="PositionError" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="100" />
+    <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[1]/ChannelFeatures" Value="Feature_AcpParTable" />
   </Module>
 </Hardware>

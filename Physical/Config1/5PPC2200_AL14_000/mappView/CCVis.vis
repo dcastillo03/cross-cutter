@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<vdef:Visualization id="CCVis" autoUpdate="true" xmlns:vdef="http://www.br-automation.com/iat2015/visualizationDefinition/v2">
+  <StartPage pageRefId="LoginPage" />
+  <Pages>
+    <Page refId="LoginPage" />
+    <Page refId="AutoPage" />
+    <Page refId="ManualPage" />
+    <Page refId="Alarms" />
+  </Pages>
+  <Navigations />
+  <BindingsSets>
+    <BindingsSet refId="AutoAreaContent" />
+    <BindingsSet refId="ManualAreaContent" />
+  </BindingsSets>
+  <EventBindingsSets>
+    <EventBindingsSet refId="EventBindings" />
+  </EventBindingsSets>
+  <EventScriptsSets />
+  <Dialogs />
+  <Contents>
+    <Content refId="LoginHeader" />
+    <Content refId="LoginAreaContent" />
+    <Content refId="NavContent" />
+    <Content refId="LoginInfoCont" />
+    <Content refId="AutoHeader" />
+    <Content refId="AutoAreaContent" />
+    <Content refId="AutoInfoContent" />
+    <Content refId="ManualHeader" />
+    <Content refId="ManualAreaContent" />
+    <Content refId="ManualInfoContent" />
+    <Content refId="AlarmsHeader" />
+    <Content refId="AlarmsAreaContent" />
+    <Content refId="AlarmsInfoContent" />
+  </Contents>
+  <SnippetsSets />
+  <VariablesSets />
+  <ExpressionsSets />
+  <StartTheme themeRefId="BuRThemeFlatDark" />
+  <Themes>
+    <Theme refId="BuRThemeFlatDark" />
+  </Themes>
+  <Configurations>
+    <Configuration key="activityCount" value="false" />
+    <Gestures>
+      <!--<SystemGesture1 touchPoints="2" />
+		  <SystemGesture2 touchPoints="2" />
+		  <SystemGesture3 touchPoints="2" />-->
+    </Gestures>
+    <VirtualKeyboards>
+      <!--<InputProcessing onKeyDown="true" />-->
+    </VirtualKeyboards>
+  </Configurations>
+</vdef:Visualization>

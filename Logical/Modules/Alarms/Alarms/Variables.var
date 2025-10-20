@@ -1,0 +1,3 @@
+VAR
+	Alarm : AlarmType;
+END_VAR

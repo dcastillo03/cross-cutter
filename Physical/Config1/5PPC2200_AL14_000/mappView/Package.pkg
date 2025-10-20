@@ -1,5 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
 <Package SubType="mappViewControl" PackageType="mappViewControl" xmlns="http://br-automation.co.at/AS/Package">
-  <Objects />
+  <Objects>
+    <Object Type="File">Config.mappviewcfg</Object>
+    <Object Type="File">CCVis.vis</Object>
+    <Object Type="File">AutoAreaContent.binding</Object>
+    <Object Type="File">EventBindings.eventbinding</Object>
+    <Object Type="File">ManualAreaContent.binding</Object>
+  </Objects>
 </Package>

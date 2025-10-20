@@ -1,0 +1,4 @@
+VAR
+	CurrentMarkDistance : LREAL; (*Distance in mm of current set of holes*)
+	PreviousMarkDistance : LREAL; (*Distance in mm of previous set of holes*)
+END_VAR
