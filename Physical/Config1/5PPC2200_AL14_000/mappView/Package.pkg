@@ -7,5 +7,6 @@
     <Object Type="File">AutoAreaContent.binding</Object>
     <Object Type="File">EventBindings.eventbinding</Object>
     <Object Type="File">ManualAreaContent.binding</Object>
+    <Object Type="File">AlarmsAreaContent.binding</Object>
   </Objects>
 </Package>

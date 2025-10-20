@@ -5,12 +5,13 @@
     <Page refId="LoginPage" />
     <Page refId="AutoPage" />
     <Page refId="ManualPage" />
-    <Page refId="Alarms" />
+    <Page refId="AlarmsPage" />
   </Pages>
   <Navigations />
   <BindingsSets>
     <BindingsSet refId="AutoAreaContent" />
     <BindingsSet refId="ManualAreaContent" />
+    <BindingsSet refId="AlarmsAreaContent" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="EventBindings" />
