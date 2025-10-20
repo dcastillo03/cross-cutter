@@ -5,5 +5,6 @@
     <Object Type="File">AlarmCore.mpalarmxcore</Object>
     <Object Type="File">AlarmHist.mpalarmxhistory</Object>
     <Object Type="File">AlarmList.mpalarmxlist</Object>
+    <Object Type="File">Recipe.mprecipexml</Object>
   </Objects>
 </Package>

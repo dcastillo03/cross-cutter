@@ -8,6 +8,7 @@
   <TaskClass Name="Cyclic#3" />
   <TaskClass Name="Cyclic#4">
     <Task Name="Alarms" Source="Modules.Alarms.Alarms.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
+    <Task Name="Recipes" Source="Modules.Recipes.Recipes.prg" Memory="UserROM" Language="ANSIC" Debugging="true" />
   </TaskClass>
   <TaskClass Name="Cyclic#5" />
   <TaskClass Name="Cyclic#6" />

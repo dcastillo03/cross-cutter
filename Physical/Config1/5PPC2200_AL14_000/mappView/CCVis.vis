@@ -6,6 +6,7 @@
     <Page refId="AutoPage" />
     <Page refId="ManualPage" />
     <Page refId="AlarmsPage" />
+    <Page refId="RecipesPage" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -32,6 +33,9 @@
     <Content refId="AlarmsHeader" />
     <Content refId="AlarmsAreaContent" />
     <Content refId="AlarmsInfoContent" />
+    <Content refId="RecipeHeader" />
+    <Content refId="RecipeAreaContent" />
+    <Content refId="RecipeInfoContent" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />
