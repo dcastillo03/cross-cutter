@@ -21,7 +21,7 @@ void _CYCLIC ProgramCyclic(void)
 	Recipe.Core.FileName = &Recipe.Name;
 		
 	Recipe.Register.Enable = 1;
-	Recipe.Register.PVName = &"::Manager:TheSequencer:Par";
+	Recipe.Register.PVName = &"::Manager:TheSequencer";
 		
 	Recipe.UI.Enable = 1;
 	Recipe.UI.DeviceName = &"Recipes";

@@ -15,7 +15,9 @@
         <Widget xsi:type="widgets.brease.AlarmHistoryItem" id="AlarmHistoryTimestamp" zIndex="2" columnType="timestamp" text="Timestamp" />
       </Widgets>
     </Widget>
-    <Widget xsi:type="widgets.brease.PushButton" id="AcknowledgePushButton" top="180" left="920" width="120" zIndex="2" text="Acknowledge" cornerRadius="10px" />
-    <Widget xsi:type="widgets.brease.PushButton" id="AcknowledgeAllPushButton" top="240" left="920" width="120" zIndex="3" text="Ack. All" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.PushButton" id="AcknowledgePushButton" top="160" left="920" width="120" zIndex="2" text="Acknowledge" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.PushButton" id="AcknowledgeAllPushButton" top="220" left="920" width="120" zIndex="3" text="Ack. All" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.PushButton" id="ExportPushButton" top="544" left="920" width="120" zIndex="4" text="Export" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.PushButton" id="ClearPushButton" top="604" left="920" width="120" zIndex="5" text="Clear" cornerRadius="10px" />
   </Widgets>
 </Content>
