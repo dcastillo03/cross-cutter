@@ -13,5 +13,8 @@
       <Variable Name="TheSequencer" RecursiveEnable="2" />
       <Variable Name="TheSlicer" RecursiveEnable="2" />
     </GlobalVariables>
+    <Task Name="Alarms">
+      <Variable Name="Alarm" RecursiveEnable="2" />
+    </Task>
   </Module>
 </OpcUaSource>
