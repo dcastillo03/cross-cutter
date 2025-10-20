@@ -1,15 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BindingsSet id="ManualAreaContent" xmlns="http://www.br-automation.com/iat2015/binding/engineering/v2" xmlns:bt="http://www.br-automation.com/iat2015/bindingListTypes/engineering/v2" xmlns:be="http://www.br-automation.com/iat2015/bindingListEmbedded/engineering/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Bindings>
-
-
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.JogPositive" attribute="value" />
-<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="MomentaryPushButton1" attribute="value" />
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.JogPositive" attribute="value" />
+      <Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="JogForwardMomPushButton" attribute="value" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.AxisPar.Jog.Velocity" attribute="value" />
+      <Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="FwdJogVelNumInput" attribute="value" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.JogNegative" attribute="value" />
+      <Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="JogBackwardMomPushButton" attribute="value" />
+    </Binding>
+  <Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.AxisPar.Jog.Acceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="FwdJogVelNumInput2" attribute="value" />
 </Binding>
 <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.AxisPar.Jog.Velocity" attribute="value" />
-<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="NumericInput1" attribute="value" />
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.AxisPar.Jog.Deceleration" attribute="value" />
+<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="FwdJogVelNumInput1" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>
