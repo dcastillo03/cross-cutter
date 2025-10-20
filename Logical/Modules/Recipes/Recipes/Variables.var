@@ -1,4 +1,3 @@
 VAR
-	Internal : RecipeInternaltyp; (*Internal structure for intermediate variable storage*)
-	Recipe : RecipeTyp; (*Recipe FUBs*)
+	Recipe : RecipeType; (*Recipe FUBs*)
 END_VAR
