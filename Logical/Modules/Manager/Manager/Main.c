@@ -15,6 +15,7 @@ void _INIT ProgramInit(void)
 	TheConveyor.Par.AxisPar.Velocity = 100;
 	TheConveyor.Par.AxisPar.Acceleration = 1000;
 	TheConveyor.Par.AxisPar.Deceleration = 1000;
+	TheConveyor.Par.AxisPar.Jog.LimitPosition.FirstPosition = -100;
 	
 	// Initialization of Slicer MpAxis
 	TheSlicer.Devices.Axis.MpLink = &Slave;
