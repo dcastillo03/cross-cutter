@@ -50,5 +50,8 @@
 # Ignore Conversion logs (AS2 to AS3)
 /ConvertLog.txt
 
+# Ignore shortcuts
+/*.lnk
+
 # Ignore more stuff to your liking
 # ...

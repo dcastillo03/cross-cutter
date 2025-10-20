@@ -22,12 +22,16 @@
     <Widget xsi:type="widgets.brease.NumericOutput" id="MarksSkippedNumericOutput" top="620" left="140" zIndex="18" />
     <Widget xsi:type="widgets.brease.Label" id="MarkDistanceLabel" top="700" left="40" width="140" zIndex="19" text="Mark Distance:" fontSize="16px" bold="false" italic="false" underline="false" />
     <Widget xsi:type="widgets.brease.NumericOutput" id="DIstanceNumericOutput" top="700" left="140" zIndex="20" unit="{'metric':'MMT','imperial':'INH','imperial-us':'INH'}" />
-    <Widget xsi:type="widgets.brease.Table" id="Table1" top="40" left="820" zIndex="21">
+    <Widget xsi:type="widgets.brease.Table" id="RecipeTable" top="40" left="820" zIndex="21">
       <Widgets>
-        <Widget xsi:type="widgets.brease.TableItem" id="TableItem1" zIndex="0" text="TableItem1" />
-        <Widget xsi:type="widgets.brease.TableItem" id="TableItem2" zIndex="1" text="TableItem2" />
-        <Widget xsi:type="widgets.brease.TableItem" id="TableItem3" zIndex="2" text="TableItem3" />
+        <Widget xsi:type="widgets.brease.TableItem" id="RecipeNameTableItem" zIndex="0" columnWidth="200" text="Recipe Name" />
+        <Widget xsi:type="widgets.brease.TableItem" id="SizesTableItem" zIndex="1" text="Size (bytes)" />
+        <Widget xsi:type="widgets.brease.TableItem" id="LastModTableItem" zIndex="2" text="Last Modified" />
       </Widgets>
     </Widget>
+    <Widget xsi:type="widgets.brease.PushButton" id="CreatePushButton" top="420" left="820" zIndex="22" text="Create" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.PushButton" id="SavePushButton" top="480" left="820" zIndex="23" text="Save" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.PushButton" id="LoadPushButton" top="360" left="820" zIndex="24" text="Load" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.TextInput" id="NewFilenameTextInput" top="420" left="960" width="259" zIndex="25" placeholder="New Filename" cornerRadius="10px" />
   </Widgets>
 </Content>
