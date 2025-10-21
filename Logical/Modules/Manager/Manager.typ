@@ -35,5 +35,6 @@ TYPE
 	END_STRUCT;
 	StatusType : 	STRUCT 
 		Active : BOOL; (*Status if enabled*)
+		AutoMode : BOOL; (*Boolean for system being in manual or auto mode*)
 	END_STRUCT;
 END_TYPE

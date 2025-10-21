@@ -32,7 +32,6 @@
       <Parameter ID="AssignedOperatingSystem" Value="ARemb" />
     </Connector>
     <Parameter ID="ConfigurationID" Value="CrossCutter_Config1" />
-    <Parameter ID="Simulation" Value="1" />
     <Group ID="FileDevice1" />
     <Parameter ID="FileDeviceName1" Value="USER" />
     <Parameter ID="FileDevicePath1" Value="USER_PATH" />
@@ -88,7 +87,10 @@
     <Parameter ID="PositionError" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="150" />
     <Parameter ID="VelocityErrorMonitoring" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits" Value="UserDefined" />
     <Parameter ID="VelocityError" Location="DriveConfiguration/Channel[1]/RealAxis/MovementErrorLimits/VelocityErrorMonitoring" Value="350" />
-    <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[1]/RealAxis/AxisFeatures" Value="CrossCutter_10mm" />
+    <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[1]/RealAxis/AxisFeatures" Value="CrossCutter" />
+    <Parameter ID="FeatureRef[2]" Location="DriveConfiguration/Channel[1]/RealAxis/AxisFeatures" Value="CrossCutter_10mm" />
+    <Parameter ID="FeatureRef[3]" Location="DriveConfiguration/Channel[1]/RealAxis/AxisFeatures" Value="CrossCutter_30mm" />
+    <Parameter ID="FeatureRef[4]" Location="DriveConfiguration/Channel[1]/RealAxis/AxisFeatures" Value="CrossCutter_Dual_Blade" />
     <Parameter ID="FeatureRef[1]" Location="DriveConfiguration/Channel[1]/ChannelFeatures" Value="Feature_AcpParTable" />
   </Module>
   <Module Name="8V1010.00-2_a" Type="8V1010.00-2" Version="2.3.0.1">

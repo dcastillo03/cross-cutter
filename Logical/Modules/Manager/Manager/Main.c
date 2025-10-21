@@ -40,6 +40,7 @@ void _INIT ProgramInit(void)
 	// Initializatin of TouchProbe for successful cut detection
 	TheSlicer.Devices.Probe.Axis = &Slave;
 	TheSlicer.Devices.Probe.TriggerInput.EventSource = mcEVENT_SRC_TRIGGER1;
+	
 
 }
 

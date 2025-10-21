@@ -225,6 +225,118 @@
       </Group>
     </Selector>
   </Element>
+  <Element ID="CrossCutter_Dual_Blade" Type="axisfeature">
+    <Selector ID="Type">
+      <Group ID="CommonParameters">
+        <Group ID="Master">
+          <Selector ID="MasterSource">
+            <Property ID="AxisReference" Value="Master" />
+            <Property ID="MaxVelocity" Value="39600" />
+          </Selector>
+          <Property ID="StartPosition" Value="35" />
+        </Group>
+      </Group>
+      <Group ID="States">
+        <Selector ID="State0">
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="MasterStartPosition" />
+              <Property ID="NextState" Value="1" />
+            </Group>
+          </Group>
+        </Selector>
+        <Group ID="State[1]">
+          <Selector ID="Cam" Value="Predefined" />
+          <Property ID="MasterFactor" Value="3500" />
+          <Property ID="SlaveFactor" Value="0" />
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="Signal1FromPLC" />
+              <Property ID="NextState" Value="2" />
+            </Group>
+          </Group>
+        </Group>
+        <Group ID="State[2]">
+          <Selector ID="Cam" Value="Predefined" />
+          <Property ID="MasterFactor" Value="2000" />
+          <Property ID="SlaveFactor" Value="2000" />
+          <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
+            <Property ID="MasterDistance" Value="88.5" />
+            <Property ID="SlaveDistance" Value="170" />
+          </Selector>
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="Signal2FromPLC" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="3" />
+            </Group>
+            <Group ID="Event[1]">
+              <Property ID="Type" Value="StateEnd" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="4" />
+            </Group>
+          </Group>
+        </Group>
+        <Group ID="State[3]">
+          <Selector ID="Cam" Value="Predefined" />
+          <Property ID="MasterFactor" Value="2000" />
+          <Property ID="SlaveFactor" Value="2000" />
+          <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
+            <Property ID="MasterDistance" Value="50.1" />
+            <Property ID="SlaveDistance" Value="160" />
+          </Selector>
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="Signal3FromPLC" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="4" />
+            </Group>
+            <Group ID="Event[1]">
+              <Property ID="Type" Value="StateEnd" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="5" />
+            </Group>
+          </Group>
+        </Group>
+        <Group ID="State[4]">
+          <Selector ID="Cam" Value="Predefined" />
+          <Property ID="MasterFactor" Value="2000" />
+          <Property ID="SlaveFactor" Value="2000" />
+          <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
+            <Property ID="MasterDistance" Value="50.1" />
+            <Property ID="SlaveDistance" Value="160" />
+          </Selector>
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="Signal4FromPLC" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="3" />
+            </Group>
+            <Group ID="Event[1]">
+              <Property ID="Type" Value="StateEnd" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="5" />
+            </Group>
+          </Group>
+        </Group>
+        <Group ID="State[5]">
+          <Selector ID="Cam" Value="Predefined" />
+          <Property ID="SlaveFactor" Value="0" />
+          <Selector ID="CompensationMode" Value="DistancesBetweenExitEntryPoints">
+            <Property ID="MasterDistance" Value="35" />
+            <Property ID="SlaveDistance" Value="170" />
+          </Selector>
+          <Group ID="Events">
+            <Group ID="Event[0]">
+              <Property ID="Type" Value="StateEnd" />
+              <Property ID="Transition" Value="EndOfState" />
+              <Property ID="NextState" Value="1" />
+            </Group>
+          </Group>
+        </Group>
+      </Group>
+    </Selector>
+  </Element>
   <Element ID="CrossCutter_30mm" Type="axisfeature">
     <Selector ID="Type">
       <Group ID="CommonParameters">

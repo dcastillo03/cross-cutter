@@ -1,11 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Content id="ManualAreaContent" guid="31134674-4170-4235-95b9-eeba04f94ec8" height="820" width="1320" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Widgets>
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="JogForwardMomPushButton" top="80" left="40" width="120" zIndex="0" image="Media/SymbolLib/Media/FastForward.svg" text="Jog" cornerRadius="10px" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogVelNumInput" top="200" left="40" width="120" zIndex="1" unit="{'metric':'C16','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="JogBackwardMomPushButton" top="140" left="40" width="120" zIndex="2" image="Media/SymbolLib/Media/FastRewind.svg" text="Jog" cornerRadius="10px" />
-    <Widget xsi:type="widgets.brease.Label" id="JoggingLabel" top="40" left="40" width="240" zIndex="3" text="Jogging Conveyor" fontSize="20px" bold="true" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogVelNumInput1" top="300" left="40" width="120" zIndex="4" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
-    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogVelNumInput2" top="260" left="40" width="120" zIndex="5" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="JogForwardMomPushButton1" top="80" left="40" width="120" zIndex="0" image="Media/SymbolLib/Media/FastForward.svg" text="Jog" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogVelNumInput1" top="200" left="40" width="120" zIndex="1" unit="{'metric':'C16','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="JogBackwardMomPushButton1" top="140" left="40" width="120" zIndex="2" image="Media/SymbolLib/Media/FastRewind.svg" text="Jog" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.Label" id="JoggingConveyorLabel" top="40" left="40" width="240" zIndex="3" text="Jogging Conveyor" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogDecelNumInput1" top="300" left="40" width="120" zIndex="4" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogAccelNumInput1" top="260" left="40" width="120" zIndex="5" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="JogForwardMomPushButton2" top="80" left="300" width="120" zIndex="6" image="Media/SymbolLib/Media/FastForward.svg" text="Jog" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogVelNumInput2" top="200" left="300" width="120" zIndex="7" unit="{'metric':'C16','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="JogBackwardMomPushButton2" top="140" left="300" width="120" zIndex="8" image="Media/SymbolLib/Media/FastRewind.svg" text="Jog" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.Label" id="JoggingSlicer" top="40" left="300" width="240" zIndex="9" text="Jogging Slicer" fontSize="20px" bold="true" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogDecelNumInput2" top="300" left="300" width="120" zIndex="10" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogAccelNumInput2" top="260" left="300" width="120" zIndex="11" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
   </Widgets>
 </Content>
