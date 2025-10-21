@@ -26,11 +26,8 @@ void _INIT ProgramInit(void)
 	// Initialization of the Sequencer
 	TheSequencer.Sequencer.MpLinkMaster = &Master;
 	TheSequencer.Sequencer.MpLink = &Slave;
-	TheSequencer.Par.CamSequence.Get.Command = mcGET_PAR_FROM_OBJECT;
+	TheSequencer.Par.CamSequence.Get.Command = mcGET_PAR_ACTUAL;
 	TheSequencer.Par.CamSequence.Get.GetOnEnable = 1; 
-	TheSequencer.Par.CamSequence.Set.Command = mcSET_UPDATE_FROM_ADR;
-	TheSequencer.Par.CamSequence.Set.Mode = mcAXIS_CAM_SEQ_SET_ON_UPDATE;
-	TheSequencer.Par.CamSequence.Set.UpdateCamList = 1;
 	TheSequencer.Sequencer.Parameters = &TheSequencer.Par;
 	TheSequencer.Sequencer.Enable = 1;
 
