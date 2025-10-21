@@ -7,6 +7,7 @@
     <Page refId="ManualPage" />
     <Page refId="AlarmsPage" />
     <Page refId="RecipesPage" />
+    <Page refId="SDMPage" />
   </Pages>
   <Navigations />
   <BindingsSets>
@@ -36,6 +37,9 @@
     <Content refId="RecipeHeader" />
     <Content refId="RecipeAreaContent" />
     <Content refId="RecipeInfoContent" />
+    <Content refId="SDMHeader" />
+    <Content refId="SDMAreaContent" />
+    <Content refId="SDMInfoContent" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />

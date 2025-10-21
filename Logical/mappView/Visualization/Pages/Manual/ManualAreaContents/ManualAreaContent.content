@@ -13,9 +13,9 @@
     <Widget xsi:type="widgets.brease.Label" id="JoggingSlicer" top="40" left="720" width="240" zIndex="9" text="Jogging Slicer" fontSize="20px" bold="true" />
     <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogDecelNumInput2" top="300" left="720" width="120" zIndex="10" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
     <Widget xsi:type="widgets.brease.NumericInput" id="FwdJogAccelNumInput2" top="260" left="720" width="120" zIndex="11" maxValue="1000" unit="{'metric':'M41','imperial':'INH','imperial-us':'INH'}" unitAlign="right" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PowerConveyorButton" top="80" left="40" height="40" zIndex="12" mouseDownText="Powered" text="Power" cornerRadius="10px" backColor="rgba(255, 0, 0, 1)" bold="true" />
-    <Widget xsi:type="widgets.brease.PushButton" id="PowerSlicerButton" top="80" left="180" height="40" zIndex="13" mouseDownText="Powered" text="Power" cornerRadius="10px" backColor="rgba(255, 0, 0, 1)" bold="true" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="HomeConveyorButton" top="160" left="40" height="40" zIndex="14" mouseDownText="Is Homed" text="Home" cornerRadius="10px" backColor="rgba(0, 0, 255, 1)" bold="true" visible="false" />
-    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="HomeSlicerButton" top="160" left="180" height="40" zIndex="15" mouseDownText="Is Homed" text="Home" cornerRadius="10px" backColor="rgba(0, 0, 255, 1)" bold="true" visible="false" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="HomeConveyorButton" top="160" left="40" height="60" zIndex="12" mouseDownText="Is Homed" text="Home" cornerRadius="10px" backColor="rgba(0, 0, 255, 1)" bold="true" visible="false" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="HomeSlicerButton" top="160" left="180" height="60" zIndex="13" mouseDownText="Is Homed" text="Home" cornerRadius="10px" backColor="rgba(0, 0, 255, 1)" bold="true" visible="false" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="ConveyorPowerToggleButton" top="80" left="40" height="60" zIndex="14" mouseDownText="Powered" text="Power" cornerRadius="10px" backColor="rgba(255, 0, 0, 1)" />
+    <Widget xsi:type="widgets.brease.ToggleButton" id="SlicerPowerToggleButton" top="80" left="180" height="60" zIndex="15" mouseDownText="Powered" text="Power" cornerRadius="10px" backColor="rgba(255, 0, 0, 1)" />
   </Widgets>
 </Content>

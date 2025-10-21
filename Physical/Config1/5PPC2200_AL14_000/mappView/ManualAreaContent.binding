@@ -41,14 +41,8 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:TheSlicer.Par.AxisPar.Jog.Deceleration" attribute="value" />
 <Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="FwdJogDecelNumInput2" attribute="value" />
 </Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.Power" attribute="value" />
-<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="PowerConveyorButton" attribute="value" />
-</Binding>
-<Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSlicer.Devices.Axis.Power" attribute="value" />
-<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="PowerSlicerButton" attribute="value" />
-</Binding>
+
+
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:TheSlicer.Devices.Axis.Home" attribute="value" />
 <Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="HomeSlicerButton" attribute="value" />
@@ -56,6 +50,14 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.Home" attribute="value" />
 <Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="HomeConveyorButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.Power" attribute="value" />
+<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="ConveyorPowerToggleButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSlicer.Devices.Axis.Power" attribute="value" />
+<Target xsi:type="brease" contentRefId="ManualAreaContent" widgetRefId="SlicerPowerToggleButton" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

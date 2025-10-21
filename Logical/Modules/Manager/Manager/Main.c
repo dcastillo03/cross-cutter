@@ -16,7 +16,7 @@ void _INIT ProgramInit(void)
 	TheConveyor.Par.AxisPar.Acceleration = 1000;
 	TheConveyor.Par.AxisPar.Deceleration = 1000;
 	TheConveyor.Par.AxisPar.Jog.LimitPosition.FirstPosition = -100;
-	TheConveyor.Par.AxisPar.Jog.LimitPosition.LastPosition = MAX_VALUE;
+//	TheConveyor.Par.AxisPar.Jog.LimitPosition.LastPosition = MAX_VALUE;
 	
 	// Initialization of Slicer MpAxis
 	TheSlicer.Devices.Axis.MpLink = &Slave;
@@ -26,8 +26,7 @@ void _INIT ProgramInit(void)
 	// Initialization of the Sequencer
 	TheSequencer.Sequencer.MpLinkMaster = &Master;
 	TheSequencer.Sequencer.MpLink = &Slave;
-	TheSequencer.Par.CamSequence.Get.Command = mcGET_PAR_ACTUAL;
-	TheSequencer.Par.CamSequence.Get.GetOnEnable = 1; 
+	TheSequencer.Par.CamSequence.Data.DataAddress = &DataAddress;
 	TheSequencer.Sequencer.Parameters = &TheSequencer.Par;
 	TheSequencer.Sequencer.Enable = 1;
 
@@ -52,9 +51,15 @@ void _CYCLIC ProgramCyclic(void)
 	switch (TheConveyor.Status.AutoMode)
 	{
 		case 0:
+			if (TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.IsHomed && !ManualHomeDone) {
+				TheSlicer.Par.AxisPar.Distance = 90;
+				TheSlicer.Devices.Axis.MoveAdditive = 1;
+				ManualHomeDone = 1;
+			}
 			break;
 
 		case 1:
+			
 			// Stop conveyor and slicer
 			if (!TheConveyor.Status.Active) {
 				TheConveyor.Devices.Axis.Home = 0;
