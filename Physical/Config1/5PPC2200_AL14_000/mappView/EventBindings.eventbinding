@@ -32,5 +32,45 @@
         </Action>
       </EventHandler>
     </EventBinding>
+    <EventBinding id="EventBinding_2">
+      <Source xsi:type="widgets.brease.NavigationButton.Event" contentRefId="NavContent" widgetRefId="AutoNavButton" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:TheConveyor.Status.AutoMode">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_3">
+      <Source xsi:type="widgets.brease.NavigationButton.Event" contentRefId="NavContent" widgetRefId="ManualNavButton" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="opcUa.NodeAction" refId="::AsGlobalPV:TheConveyor.Status.AutoMode">
+            <Method xsi:type="opcUa.NodeAction.SetValueBool" value="false" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_4">
+      <Source xsi:type="widgets.brease.PushButton.Event" contentRefId="ManualAreaContent" widgetRefId="PowerConveyorButton" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.MomentaryPushButton.Action" contentRefId="ManualAreaContent" widgetRefId="HomeConveyorButton">
+            <Method xsi:type="widgets.brease.MomentaryPushButton.Action.SetVisible" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
+    <EventBinding id="EventBinding_5">
+      <Source xsi:type="widgets.brease.PushButton.Event" contentRefId="ManualAreaContent" widgetRefId="PowerSlicerButton" event="Click" />
+      <EventHandler>
+        <Action>
+          <Target xsi:type="widgets.brease.MomentaryPushButton.Action" contentRefId="ManualAreaContent" widgetRefId="HomeSlicerButton">
+            <Method xsi:type="widgets.brease.MomentaryPushButton.Action.SetVisible" value="true" />
+          </Target>
+        </Action>
+      </EventHandler>
+    </EventBinding>
   </Bindings>
 </EventBindingSet>
