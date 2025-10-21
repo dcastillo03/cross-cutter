@@ -10,11 +10,9 @@
       </Group>
     </Group>
     <Group ID="TargetFiles">
-      <Property ID="TargetFile[1]" Value="Libraries.MpAudit.TxtEvent.tmx" />
-      <Property ID="TargetFile[2]" Value="mappView.Resources.Texts.UnitTexts.tmx" />
-      <Property ID="TargetFile[3]" Value="mappView.Resources.Texts.AlarmHistory.tmx" />
-      <Property ID="TargetFile[4]" Value="mappView.Resources.Texts.AlarmList.tmx" />
-      <Property ID="TargetFile[5]" Value="mappView.Resources.Texts.AuditList.tmx" />
+      <Property ID="TargetFile[1]" Value="mappView.Resources.Texts.UnitTexts.tmx" />
+      <Property ID="TargetFile[2]" Value="mappView.Resources.Texts.AlarmHistory.tmx" />
+      <Property ID="TargetFile[3]" Value="mappView.Resources.Texts.AlarmList.tmx" />
     </Group>
   </Element>
 </Configuration>

@@ -10,6 +10,7 @@
             <Property ID="MaxVelocity" Value="39600" />
           </Selector>
           <Property ID="StartPosition" Value="35" />
+          <Selector ID="StartInterval" Value="SpecifyValue" />
         </Group>
       </Group>
       <Group ID="States">
@@ -122,6 +123,7 @@
             <Property ID="MaxVelocity" Value="39600" />
           </Selector>
           <Property ID="StartPosition" Value="35" />
+          <Selector ID="StartInterval" Value="SpecifyValue" />
         </Group>
       </Group>
       <Group ID="States">
@@ -234,6 +236,7 @@
             <Property ID="MaxVelocity" Value="39600" />
           </Selector>
           <Property ID="StartPosition" Value="35" />
+          <Selector ID="StartInterval" Value="SpecifyValue" />
         </Group>
       </Group>
       <Group ID="States">
@@ -346,6 +349,7 @@
             <Property ID="MaxVelocity" Value="39600" />
           </Selector>
           <Property ID="StartPosition" Value="35" />
+          <Selector ID="StartInterval" Value="SpecifyValue" />
         </Group>
       </Group>
       <Group ID="States">

@@ -53,7 +53,7 @@
       </EventHandler>
     </EventBinding>
     <EventBinding id="EventBinding_6">
-      <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="ManualAreaContent" widgetRefId="ConveyorPowerToggleButton" event="ValueChanged" />
+      <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="ManualAreaContent" widgetRefId="ConveyorPowerToggleButton" event="Click" />
       <EventHandler>
         <Action>
           <Target xsi:type="widgets.brease.MomentaryPushButton.Action" contentRefId="ManualAreaContent" widgetRefId="HomeConveyorButton">
@@ -63,7 +63,7 @@
       </EventHandler>
     </EventBinding>
     <EventBinding id="EventBinding_7">
-      <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="ManualAreaContent" widgetRefId="SlicerPowerToggleButton" event="ValueChanged" />
+      <Source xsi:type="widgets.brease.ToggleButton.Event" contentRefId="ManualAreaContent" widgetRefId="SlicerPowerToggleButton" event="Click" />
       <EventHandler>
         <Action>
           <Target xsi:type="widgets.brease.MomentaryPushButton.Action" contentRefId="ManualAreaContent" widgetRefId="HomeSlicerButton">

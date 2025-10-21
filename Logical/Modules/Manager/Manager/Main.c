@@ -16,12 +16,15 @@ void _INIT ProgramInit(void)
 	TheConveyor.Par.AxisPar.Acceleration = 1000;
 	TheConveyor.Par.AxisPar.Deceleration = 1000;
 	TheConveyor.Par.AxisPar.Jog.LimitPosition.FirstPosition = -100;
-//	TheConveyor.Par.AxisPar.Jog.LimitPosition.LastPosition = MAX_VALUE;
+	TheConveyor.Par.AxisPar.Jog.LimitPosition.LastPosition = MAX_VALUE;
 	
 	// Initialization of Slicer MpAxis
 	TheSlicer.Devices.Axis.MpLink = &Slave;
 	TheSlicer.Devices.Axis.Parameters = &TheSlicer.Par.AxisPar;
 	TheSlicer.Devices.Axis.Enable = 1;
+	
+	TheSlicer.Par.AxisPar.Velocity = 45;
+	TheSlicer.Par.AxisPar.Distance = 90;
 	
 	// Initialization of the Sequencer
 	TheSequencer.Sequencer.MpLinkMaster = &Master;
@@ -54,13 +57,33 @@ void _CYCLIC ProgramCyclic(void)
 	{
 		case 0:
 			if (TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.IsHomed && !ManualHomeDone) {
-				TheSlicer.Par.AxisPar.Distance = 90;
 				TheSlicer.Devices.Axis.MoveAdditive = 1;
 				ManualHomeDone = 1;
+				AutoHomeDone = 0;
+				TheSequencer.Sequencer.StartSequence = 0;
+			}
+//			
+			if (TheSlicer.Devices.Axis.MoveDone) {
+				TheSlicer.Devices.Axis.MoveAdditive = 0;
+			}
+			if (TheSlicer.Devices.Axis.Position >= 161 && TheSlicer.Devices.Axis.Position <= 199) {
+				TheSlicer.Devices.Axis.JogNegative = 0;
+				TheSlicer.Devices.Axis.JogPositive = 0;
 			}
 			break;
 
 		case 1:
+			
+			if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone) {
+				TheSlicer.Par.AxisPar.Distance = -1 * TheSlicer.Devices.Axis.Position;
+				TheSlicer.Devices.Axis.MoveAdditive = 1;
+				ManualHomeDone = 0;
+				if (TheSlicer.Devices.Axis.MoveDone) {
+					AutoHomeDone = 1;
+					TheSlicer.Devices.Axis.MoveAdditive = 0;
+					TheSlicer.Par.AxisPar.Distance = 90;
+				}
+			}
 			
 			// Stop conveyor and slicer
 			if (!TheConveyor.Status.Active) {
@@ -91,7 +114,7 @@ void _CYCLIC ProgramCyclic(void)
 			}
 
 			if (TheSlicer.Devices.Axis.PowerOn && !TheSlicer.Devices.Axis.IsHomed
-			&& TheSlicer.Status.Active) {
+			&& TheSlicer.Status.Active && AutoHomeDone) {
 				TheSlicer.Devices.Axis.Home = 1;
 			}
 	

@@ -9,10 +9,7 @@
 <Source xsi:type="opcUa" refId="::Alarms:Alarm.ListUIConnect.AcknowledgeAll" attribute="value" />
 <Target xsi:type="brease" contentRefId="AlarmsAreaContent" widgetRefId="AcknowledgeAllPushButton" attribute="value" />
 </Binding>
-<Binding mode="oneWay">
-<Source xsi:type="mapp" refId="gAlarmXList" attribute="link" />
-<Target xsi:type="brease" contentRefId="AlarmsAreaContent" widgetRefId="AlarmList" attribute="mpLink" />
-</Binding>
+
 <Binding mode="twoWay">
 <Source xsi:type="mapp" refId="gAlarmXHistory" attribute="link" />
 <Target xsi:type="brease" contentRefId="AlarmsAreaContent" widgetRefId="AlarmHistory" attribute="mpLink" />
@@ -24,6 +21,11 @@
 <Binding mode="twoWay">
 <Source xsi:type="opcUa" refId="::Alarms:Alarm.History.Clear" attribute="value" />
 <Target xsi:type="brease" contentRefId="AlarmsAreaContent" widgetRefId="ClearPushButton" attribute="value" />
+</Binding>
+
+<Binding mode="oneWay">
+<Source xsi:type="mapp" refId="gAlarmXList" attribute="link" />
+<Target xsi:type="brease" contentRefId="AlarmsAreaContent" widgetRefId="AlarmList" attribute="mpLink" />
 </Binding>
 </Bindings>
 </BindingsSet>
