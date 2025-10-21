@@ -35,5 +35,8 @@
     <Widget xsi:type="widgets.brease.TextInput" id="NewFilenameTextInput" top="420" left="960" width="259" zIndex="25" placeholder="New Filename" cornerRadius="10px" visible="false" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="AppleMomPushButton" top="360" left="960" zIndex="26" text="Apply" cornerRadius="10px" />
     <Widget xsi:type="widgets.brease.MomentaryPushButton" id="UpdateMomPushButton" top="360" left="1100" zIndex="27" text="Update" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.NumericInput" id="ConveyorSpeedNumInput" top="80" left="380" zIndex="28" maxValue="180" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="SpeedMomPushButton" top="80" left="500" zIndex="29" text="Update" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.Label" id="ConveyorSpeedLabel" top="40" left="360" width="280" zIndex="30" text="Conveyor Speed (prod/min)" fontSize="20px" bold="true" underline="false" />
   </Widgets>
 </Content>

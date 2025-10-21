@@ -57,10 +57,16 @@ void _CYCLIC ProgramCyclic(void)
 	{
 		case 0:
 			if (TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.IsHomed && !ManualHomeDone) {
-				TheSlicer.Devices.Axis.MoveAdditive = 1;
-				ManualHomeDone = 1;
-				AutoHomeDone = 0;
-				TheSequencer.Sequencer.StartSequence = 0;
+				if (!TheSlicer.Devices.Axis.Stopped) {
+					TheSlicer.Devices.Axis.Stop = 1;
+				}
+				if (TheSlicer.Devices.Axis.Stopped) {
+					TheSlicer.Devices.Axis.Stop = 0;
+					TheSlicer.Devices.Axis.MoveAdditive = 1;
+					ManualHomeDone = 1;
+					AutoHomeDone = 0;
+					TheSequencer.Sequencer.StartSequence = 0;
+				}	
 			}
 //			
 			if (TheSlicer.Devices.Axis.MoveDone) {
@@ -190,6 +196,7 @@ void _CYCLIC ProgramCyclic(void)
 	TheConveyor.Par.AvgMarkDistance = TheConveyor.Devices.Probe.RecordedValue / TheConveyor.Par.HolesCounted;
 	TheSlicer.Status.AutoMode = TheConveyor.Status.AutoMode;
 	brsstrcpy(&TheSequencer.Par.CamSequence.Data.DataObjectName, &DataObjectName);
+	TheConveyor.Par.AxisPar.Velocity = TheConveyor.Par.ConveyorSpeed * ( 70.0 / 60.0);
 	
 	// FUBs calls
 	MpAxisBasic(&TheConveyor.Devices.Axis);

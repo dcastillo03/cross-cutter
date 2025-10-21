@@ -77,5 +77,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:TheSequencer.Sequencer.Update" attribute="value" />
 <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="UpdateMomPushButton" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.Update" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="SpeedMomPushButton" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
