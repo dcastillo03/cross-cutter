@@ -4,4 +4,5 @@ VAR
 	MAX_VALUE : LREAL := 999999999;
 	ManualHomeDone : BOOL;
 	DataAddress : McCamAutParType;
+	DataObjectName : STRING[32];
 END_VAR

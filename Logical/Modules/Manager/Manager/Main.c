@@ -27,6 +27,8 @@ void _INIT ProgramInit(void)
 	TheSequencer.Sequencer.MpLinkMaster = &Master;
 	TheSequencer.Sequencer.MpLink = &Slave;
 	TheSequencer.Par.CamSequence.Data.DataAddress = &DataAddress;
+	TheSequencer.Par.CamSequence.Set.Command = mcSET_UPDATE_FROM_ADR;
+	TheSequencer.Par.CamSequence.Set.Mode = mcAXIS_CAM_SEQ_SET_ON_UPDATE;
 	TheSequencer.Sequencer.Parameters = &TheSequencer.Par;
 	TheSequencer.Sequencer.Enable = 1;
 
@@ -164,6 +166,7 @@ void _CYCLIC ProgramCyclic(void)
 	TheConveyor.Par.HolesCounted = TheConveyor.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.AvgMarkDistance = TheConveyor.Devices.Probe.RecordedValue / TheConveyor.Par.HolesCounted;
 	TheSlicer.Status.AutoMode = TheConveyor.Status.AutoMode;
+	brsstrcpy(&TheSequencer.Par.CamSequence.Data.DataObjectName, &DataObjectName);
 	
 	// FUBs calls
 	MpAxisBasic(&TheConveyor.Devices.Axis);

@@ -33,5 +33,7 @@
     <Widget xsi:type="widgets.brease.PushButton" id="SavePushButton" top="480" left="820" zIndex="23" text="Save" cornerRadius="10px" />
     <Widget xsi:type="widgets.brease.PushButton" id="LoadPushButton" top="360" left="820" zIndex="24" text="Load" cornerRadius="10px" />
     <Widget xsi:type="widgets.brease.TextInput" id="NewFilenameTextInput" top="420" left="960" width="259" zIndex="25" placeholder="New Filename" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="AppleMomPushButton" top="360" left="960" zIndex="26" text="Apply" cornerRadius="10px" />
+    <Widget xsi:type="widgets.brease.MomentaryPushButton" id="UpdateMomPushButton" top="360" left="1100" zIndex="27" text="Update" cornerRadius="10px" />
   </Widgets>
 </Content>

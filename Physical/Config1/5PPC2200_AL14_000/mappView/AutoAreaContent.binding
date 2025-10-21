@@ -69,5 +69,13 @@
 <Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.Recipe.Load" attribute="value" />
 <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="LoadPushButton" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSequencer.Sequencer.GetSequence" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="AppleMomPushButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSequencer.Sequencer.Update" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="UpdateMomPushButton" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>
