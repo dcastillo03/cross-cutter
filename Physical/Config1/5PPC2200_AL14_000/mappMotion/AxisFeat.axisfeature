@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <?AutomationStudio FileVersion="4.9"?>
 <Configuration>
-  <Element ID="CrossCutter" Type="axisfeature">
+  <Element ID="CrossCutter" Type="axisfeature" Description="Default Cross cutter setting">
     <Selector ID="Type">
       <Group ID="CommonParameters">
         <Group ID="Master">
@@ -114,7 +114,7 @@
       </Group>
     </Selector>
   </Element>
-  <Element ID="CrossCutter_10mm" Type="axisfeature">
+  <Element ID="CrossCutter_10mm" Type="axisfeature" Description="10mm sync zone (Needs work)">
     <Selector ID="Type">
       <Group ID="CommonParameters">
         <Group ID="Master">
@@ -227,7 +227,7 @@
       </Group>
     </Selector>
   </Element>
-  <Element ID="CrossCutter_Dual_Blade" Type="axisfeature">
+  <Element ID="CrossCutter_Dual_Blade" Type="axisfeature" Description="Dual blade cross cutter setting">
     <Selector ID="Type">
       <Group ID="CommonParameters">
         <Group ID="Master">
@@ -340,7 +340,7 @@
       </Group>
     </Selector>
   </Element>
-  <Element ID="CrossCutter_30mm" Type="axisfeature">
+  <Element ID="CrossCutter_30mm" Type="axisfeature" Description="30mm sync zone (Needs work)">
     <Selector ID="Type">
       <Group ID="CommonParameters">
         <Group ID="Master">

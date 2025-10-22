@@ -93,6 +93,7 @@ void _CYCLIC ProgramCyclic(void)
 
 		case 1:
 			
+			// Home slicer for automatic mode, based on current position defined in manual mode (if different)
 			if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone && TheSlicer.Devices.Axis.Position < 170) {
 				TheSlicer.Par.AxisPar.Distance = -1 * TheSlicer.Devices.Axis.Position;
 				TheSlicer.Devices.Axis.MoveAdditive = 1;
@@ -103,14 +104,13 @@ void _CYCLIC ProgramCyclic(void)
 					TheSlicer.Par.AxisPar.Distance = 90;
 				}
 			} else if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone && TheSlicer.Devices.Axis.Position > 190) {
-				TheSlicer.Par.AxisPar.Direction = mcDIR_NEGATIVE;
-				TheSlicer.Par.AxisPar.Distance = -1 * TheSlicer.Devices.Axis.Position;
+				// Change direction of homing so it doesn't "slice" belt
+				TheSlicer.Par.AxisPar.Distance = 360 - TheSlicer.Devices.Axis.Position;
 				TheSlicer.Devices.Axis.MoveAdditive = 1;
 				ManualHomeDone = 0;
 				if (TheSlicer.Devices.Axis.MoveDone) {
 					AutoHomeDone = 1;
 					TheSlicer.Devices.Axis.MoveAdditive = 0;
-					TheSlicer.Par.AxisPar.Direction = mcDIR_POSITIVE;
 					TheSlicer.Par.AxisPar.Distance = 90;
 				}
 			}
