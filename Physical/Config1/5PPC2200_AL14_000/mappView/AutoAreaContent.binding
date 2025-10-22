@@ -85,5 +85,9 @@
 <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.ConveyorSpeed" attribute="value" />
 <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="ConveyorSpeedNumInput" attribute="value" />
 </Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Probe.Period" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="PrintMarkWidthNumInput" attribute="value" />
+</Binding>
 </Bindings>
 </BindingsSet>

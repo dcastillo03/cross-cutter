@@ -56,7 +56,9 @@ void _CYCLIC ProgramCyclic(void)
 	switch (TheConveyor.Status.AutoMode)
 	{
 		case 0:
+			// Home slicer once entering manual mode
 			if (TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.IsHomed && !ManualHomeDone) {
+				// Issue stop command to fix 9903 warning
 				if (!TheSlicer.Devices.Axis.Stopped) {
 					TheSlicer.Devices.Axis.Stop = 1;
 				}
@@ -69,24 +71,46 @@ void _CYCLIC ProgramCyclic(void)
 				}	
 			}
 //			
+			// Once homed, turn off move additive.
 			if (TheSlicer.Devices.Axis.MoveDone) {
 				TheSlicer.Devices.Axis.MoveAdditive = 0;
 			}
-			if (TheSlicer.Devices.Axis.Position >= 161 && TheSlicer.Devices.Axis.Position <= 199) {
-				TheSlicer.Devices.Axis.JogNegative = 0;
+			
+			// If slicer is in cutting zone, don't allow jogging.
+			if (TheSlicer.Devices.Axis.Position > 160 && TheSlicer.Devices.Axis.Position < 170) {
 				TheSlicer.Devices.Axis.JogPositive = 0;
+			}
+			if (TheSlicer.Devices.Axis.Position < 200 && TheSlicer.Devices.Axis.Position > 190) {
+				TheSlicer.Devices.Axis.JogNegative = 0;
+			}
+			
+			// If slicer is in cutting zone, don't allow belt movement.
+			if (TheSlicer.Devices.Axis.Position > 160 && TheSlicer.Devices.Axis.Position < 200) {
+				TheConveyor.Devices.Axis.JogNegative = 0;
+				TheConveyor.Devices.Axis.JogPositive = 0;
 			}
 			break;
 
 		case 1:
 			
-			if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone) {
+			if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone && TheSlicer.Devices.Axis.Position < 170) {
 				TheSlicer.Par.AxisPar.Distance = -1 * TheSlicer.Devices.Axis.Position;
 				TheSlicer.Devices.Axis.MoveAdditive = 1;
 				ManualHomeDone = 0;
 				if (TheSlicer.Devices.Axis.MoveDone) {
 					AutoHomeDone = 1;
 					TheSlicer.Devices.Axis.MoveAdditive = 0;
+					TheSlicer.Par.AxisPar.Distance = 90;
+				}
+			} else if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone && TheSlicer.Devices.Axis.Position > 190) {
+				TheSlicer.Par.AxisPar.Direction = mcDIR_NEGATIVE;
+				TheSlicer.Par.AxisPar.Distance = -1 * TheSlicer.Devices.Axis.Position;
+				TheSlicer.Devices.Axis.MoveAdditive = 1;
+				ManualHomeDone = 0;
+				if (TheSlicer.Devices.Axis.MoveDone) {
+					AutoHomeDone = 1;
+					TheSlicer.Devices.Axis.MoveAdditive = 0;
+					TheSlicer.Par.AxisPar.Direction = mcDIR_POSITIVE;
 					TheSlicer.Par.AxisPar.Distance = 90;
 				}
 			}
