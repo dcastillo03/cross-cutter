@@ -33,9 +33,61 @@
       <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.AvgMarkDistance" attribute="value" />
       <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="AvgDIstanceNumericOutput" attribute="value" />
     </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.CurrentMarkDistance" attribute="value" />
+      <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="DIstanceNumericOutput" attribute="value" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.Recipe.List.Names" attribute="value" />
+      <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="RecipeNameTableItem" attribute="stringValue" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.Recipe.List.Sizes" attribute="value" />
+      <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="SizesTableItem" attribute="value" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.Recipe.List.LastModified" attribute="value" />
+      <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="LastModTableItem" attribute="stringValue" />
+    </Binding>
+    <Binding mode="twoWay">
+      <Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.Recipe.List.SelectedIndex" attribute="value" />
+      <Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="RecipeTable" attribute="selectedRow" />
+    </Binding>
   <Binding mode="twoWay">
-<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.CurrentMarkDistance" attribute="value" />
-<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="DIstanceNumericOutput" attribute="value" />
+<Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.New.FileName" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="NewFilenameTextInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.New.Create" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="CreatePushButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.Recipe.Save" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="SavePushButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::Recipes:Recipe.UIConnect.Recipe.Load" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="LoadPushButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSequencer.Sequencer.GetSequence" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="AppleMomPushButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheSequencer.Sequencer.Update" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="UpdateMomPushButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Axis.Update" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="SpeedMomPushButton" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Par.ConveyorSpeed" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="ConveyorSpeedNumInput" attribute="value" />
+</Binding>
+<Binding mode="twoWay">
+<Source xsi:type="opcUa" refId="::AsGlobalPV:TheConveyor.Devices.Probe.Period" attribute="value" />
+<Target xsi:type="brease" contentRefId="AutoAreaContent" widgetRefId="PrintMarkWidthNumInput" attribute="value" />
 </Binding>
 </Bindings>
 </BindingsSet>

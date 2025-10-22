@@ -15,15 +15,23 @@ void _INIT ProgramInit(void)
 	TheConveyor.Par.AxisPar.Velocity = 100;
 	TheConveyor.Par.AxisPar.Acceleration = 1000;
 	TheConveyor.Par.AxisPar.Deceleration = 1000;
+	TheConveyor.Par.AxisPar.Jog.LimitPosition.FirstPosition = -100;
+	TheConveyor.Par.AxisPar.Jog.LimitPosition.LastPosition = MAX_VALUE;
 	
 	// Initialization of Slicer MpAxis
 	TheSlicer.Devices.Axis.MpLink = &Slave;
 	TheSlicer.Devices.Axis.Parameters = &TheSlicer.Par.AxisPar;
 	TheSlicer.Devices.Axis.Enable = 1;
 	
+	TheSlicer.Par.AxisPar.Velocity = 45;
+	TheSlicer.Par.AxisPar.Distance = 90;
+	
 	// Initialization of the Sequencer
 	TheSequencer.Sequencer.MpLinkMaster = &Master;
 	TheSequencer.Sequencer.MpLink = &Slave;
+	TheSequencer.Par.CamSequence.Data.DataAddress = &DataAddress;
+	TheSequencer.Par.CamSequence.Set.Command = mcSET_UPDATE_FROM_ADR;
+	TheSequencer.Par.CamSequence.Set.Mode = mcAXIS_CAM_SEQ_SET_ON_UPDATE;
 	TheSequencer.Sequencer.Parameters = &TheSequencer.Par;
 	TheSequencer.Sequencer.Enable = 1;
 
@@ -39,110 +47,180 @@ void _INIT ProgramInit(void)
 	// Initializatin of TouchProbe for successful cut detection
 	TheSlicer.Devices.Probe.Axis = &Slave;
 	TheSlicer.Devices.Probe.TriggerInput.EventSource = mcEVENT_SRC_TRIGGER1;
+	
 
 }
 
 void _CYCLIC ProgramCyclic(void)
 {
-	
-	// Stop conveyor and slicer
-	if (!TheConveyor.Status.Active) {
-		TheConveyor.Devices.Axis.Home = 0;
-		TheConveyor.Devices.Axis.MoveVelocity = 0;
-	}
-	
-	if (!TheSlicer.Status.Active) {
-		TheSlicer.Devices.Axis.Home = 0;
-	}
-	
-	// Power on conveyor and slicer if FUBs are active and start button pressed
-	if (!TheConveyor.Devices.Axis.PowerOn && TheConveyor.Devices.Axis.Active 
-		&& TheConveyor.Status.Active) {
-		TheConveyor.Devices.Axis.Power = 1;
-	}
-	
-	if (!TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.Active 
-		&& TheSlicer.Status.Active) {
-		TheSlicer.Devices.Axis.Power = 1;
-	}
-	
-	// Home conveyor and slicer if they are powered
-	if (TheConveyor.Devices.Axis.PowerOn && !TheConveyor.Devices.Axis.IsHomed
-		&& TheConveyor.Status.Active) {
-		TheConveyor.Devices.Axis.Home = 1;
-		
-	}
+	switch (TheConveyor.Status.AutoMode)
+	{
+		case 0:
+			// Home slicer once entering manual mode
+			if (TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.IsHomed && !ManualHomeDone) {
+				// Issue stop command to fix 9903 warning
+				if (!TheSlicer.Devices.Axis.Stopped) {
+					TheSlicer.Devices.Axis.Stop = 1;
+				}
+				if (TheSlicer.Devices.Axis.Stopped) {
+					TheSlicer.Devices.Axis.Stop = 0;
+					TheSlicer.Devices.Axis.MoveAdditive = 1;
+					ManualHomeDone = 1;
+					AutoHomeDone = 0;
+					TheSequencer.Sequencer.StartSequence = 0;
+				}	
+			}
+//			
+			// Once homed, turn off move additive.
+			if (TheSlicer.Devices.Axis.MoveDone) {
+				TheSlicer.Devices.Axis.MoveAdditive = 0;
+			}
+			
+			// If slicer is in cutting zone, don't allow jogging.
+			if (TheSlicer.Devices.Axis.Position > 160 && TheSlicer.Devices.Axis.Position < 170) {
+				TheSlicer.Devices.Axis.JogPositive = 0;
+			}
+			if (TheSlicer.Devices.Axis.Position < 200 && TheSlicer.Devices.Axis.Position > 190) {
+				TheSlicer.Devices.Axis.JogNegative = 0;
+			}
+			
+			// If slicer is in cutting zone, don't allow belt movement.
+			if (TheSlicer.Devices.Axis.Position > 160 && TheSlicer.Devices.Axis.Position < 200) {
+				TheConveyor.Devices.Axis.JogNegative = 0;
+				TheConveyor.Devices.Axis.JogPositive = 0;
+			}
+			break;
 
-	if (TheSlicer.Devices.Axis.PowerOn && !TheSlicer.Devices.Axis.IsHomed
-		&& TheSlicer.Status.Active) {
-		TheSlicer.Devices.Axis.Home = 1;
-	}
+		case 1:
+			
+			// Home slicer for automatic mode, based on current position defined in manual mode (if different)
+			if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone && TheSlicer.Devices.Axis.Position < 170) {
+				TheSlicer.Par.AxisPar.Distance = -1 * TheSlicer.Devices.Axis.Position;
+				TheSlicer.Devices.Axis.MoveAdditive = 1;
+				ManualHomeDone = 0;
+				if (TheSlicer.Devices.Axis.MoveDone) {
+					AutoHomeDone = 1;
+					TheSlicer.Devices.Axis.MoveAdditive = 0;
+					TheSlicer.Par.AxisPar.Distance = 90;
+				}
+			} else if (TheSlicer.Devices.Axis.PowerOn && !AutoHomeDone && TheSlicer.Devices.Axis.Position > 190) {
+				// Change direction of homing so it doesn't "slice" belt
+				TheSlicer.Par.AxisPar.Distance = 360 - TheSlicer.Devices.Axis.Position;
+				TheSlicer.Devices.Axis.MoveAdditive = 1;
+				ManualHomeDone = 0;
+				if (TheSlicer.Devices.Axis.MoveDone) {
+					AutoHomeDone = 1;
+					TheSlicer.Devices.Axis.MoveAdditive = 0;
+					TheSlicer.Par.AxisPar.Distance = 90;
+				}
+			}
+			
+			// Stop conveyor and slicer
+			if (!TheConveyor.Status.Active) {
+				TheConveyor.Devices.Axis.Home = 0;
+				TheConveyor.Devices.Axis.MoveVelocity = 0;
+			}
 	
-	// Move velocity conveyor once homed
-	if (TheConveyor.Devices.Axis.IsHomed && TheConveyor.Status.Active) {
-		TheConveyor.Devices.Axis.MoveVelocity = 1;
-		TheSequencer.Sequencer.StartSequence = 1;
-		TheConveyor.Devices.Probe.Enable = 1;
-		TheSlicer.Devices.Probe.Enable = 1;
-	}
+			if (!TheSlicer.Status.Active) {
+				TheSlicer.Devices.Axis.Home = 0;
+			}
+	
+			// Power on conveyor and slicer if FUBs are active and start button pressed
+			if (!TheConveyor.Devices.Axis.PowerOn && TheConveyor.Devices.Axis.Active 
+			&& TheConveyor.Status.Active) {
+				TheConveyor.Devices.Axis.Power = 1;
+			}
+	
+			if (!TheSlicer.Devices.Axis.PowerOn && TheSlicer.Devices.Axis.Active 
+			&& TheSlicer.Status.Active) {
+				TheSlicer.Devices.Axis.Power = 1;
+			}
+	
+			// Home conveyor and slicer if they are powered
+			if (TheConveyor.Devices.Axis.PowerOn && !TheConveyor.Devices.Axis.IsHomed
+			&& TheConveyor.Status.Active) {
+				TheConveyor.Devices.Axis.Home = 1;
+		
+			}
+
+			if (TheSlicer.Devices.Axis.PowerOn && !TheSlicer.Devices.Axis.IsHomed
+			&& TheSlicer.Status.Active && AutoHomeDone) {
+				TheSlicer.Devices.Axis.Home = 1;
+			}
+	
+			// Move velocity conveyor once homed
+			if (TheConveyor.Devices.Axis.IsHomed && TheConveyor.Status.Active) {
+				TheConveyor.Devices.Axis.MoveVelocity = 1;
+				TheSequencer.Sequencer.StartSequence = 1;
+				TheConveyor.Devices.Probe.Enable = 1;
+				TheSlicer.Devices.Probe.Enable = 1;
+			}
 	
 	
-	// If a new hole is detected send a "pulse" to Signal #.
-	if  ((TheConveyor.Devices.Probe.ValidTriggerCount > TheConveyor.Par.HolesCounted)
-		&& TheSlicer.Status.Active) {
+			// If a new hole is detected send a "pulse" to Signal #.
+			if  ((TheConveyor.Devices.Probe.ValidTriggerCount > TheConveyor.Par.HolesCounted)
+			&& TheSlicer.Status.Active) {
 		
 		
-		// Evalute current sequencer state, enabled/disable respective signals
-		switch (TheSequencer.Sequencer.ActualStateIndex) {
-			// In state 1, enable signal 1 to transition to state 2. Disable signal 3 as a transition-from-state-5 remnant.
-			case 1:
-				TheSequencer.Sequencer.Signal1 = 1;
-				TheSequencer.Sequencer.Signal3 = 0;
-				break;
-			// In state 2, enable signal 2 to transition to state 3. Disable signal 1 as a transition-from-state-1 remnant.
-			case 2:
-				TheSequencer.Sequencer.Signal2 = 1;
-				TheSequencer.Sequencer.Signal1 = 0;
-				break;
-			// In state 3, enable signal 3 to transition to state 4. Will bounce back and forth between states 3 and 4.
-			case 3:
-				TheSequencer.Sequencer.Signal3 = 1;
-				TheSequencer.Sequencer.Signal4 = 0;
-				TheSequencer.Sequencer.Signal2 = 0;
-				break;
-			// In state 4, enable signal 4 to transition to state 3.
-			case 4:
-				TheSequencer.Sequencer.Signal4 = 1;
-				TheSequencer.Sequencer.Signal3 = 0;
-				break;
-		}
-	}
+				// Evalute current sequencer state, enabled/disable respective signals
+				switch (TheSequencer.Sequencer.ActualStateIndex) {
+					// In state 1, enable signal 1 to transition to state 2. Disable signal 3 as a transition-from-state-5 remnant.
+					case 1:
+						TheSequencer.Sequencer.Signal1 = 1;
+						TheSequencer.Sequencer.Signal3 = 0;
+						break;
+					// In state 2, enable signal 2 to transition to state 3. Disable signal 1 as a transition-from-state-1 remnant.
+					case 2:
+						TheSequencer.Sequencer.Signal2 = 1;
+						TheSequencer.Sequencer.Signal1 = 0;
+						break;
+					// In state 3, enable signal 3 to transition to state 4. Will bounce back and forth between states 3 and 4.
+					case 3:
+						TheSequencer.Sequencer.Signal3 = 1;
+						TheSequencer.Sequencer.Signal4 = 0;
+						TheSequencer.Sequencer.Signal2 = 0;
+						break;
+					// In state 4, enable signal 4 to transition to state 3.
+					case 4:
+						TheSequencer.Sequencer.Signal4 = 1;
+						TheSequencer.Sequencer.Signal3 = 0;
+						break;
+				}
+			}
 	
-	// Calculate distance between one cut
-	if (TheSequencer.Sequencer.InCam) {
-		PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
-	} else if (TheSequencer.Sequencer.InCompensation) {
-		CurrentMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
-		TheConveyor.Par.CurrentMarkDistance = CurrentMarkDistance - PreviousMarkDistance;
-	}
+			// Calculate distance between one cut
+			if (TheSequencer.Sequencer.InCam) {
+				PreviousMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+			} else if (TheSequencer.Sequencer.InCompensation) {
+				CurrentMarkDistance = TheConveyor.Devices.Probe.RecordedValue;
+				TheConveyor.Par.CurrentMarkDistance = CurrentMarkDistance - PreviousMarkDistance;
+			}
 	
-	// Enable/disable conveyor and slicer
-	if (TheConveyor.Cmd.Enable) {
-		TheConveyor.Status.Active = 1;
-	} else {
-		TheConveyor.Status.Active = 0;
-	}
+			// Enable/disable conveyor and slicer
+			if (TheConveyor.Cmd.Enable) {
+				TheConveyor.Status.Active = 1;
+			} else {
+				TheConveyor.Status.Active = 0;
+			}
 	
-	if (TheSlicer.Cmd.Enable) {
-		TheSlicer.Status.Active = 1;
-	} else {
-		TheSlicer.Status.Active = 0;
+			if (TheSlicer.Cmd.Enable) {
+				TheSlicer.Status.Active = 1;
+			} else {
+				TheSlicer.Status.Active = 0;
+			}
+			break;
 	}
+     
+	
+	
 	
 	// Assignments
 	TheSlicer.Par.SuccessfulCuts = TheSlicer.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.HolesCounted = TheConveyor.Devices.Probe.ValidTriggerCount;
 	TheConveyor.Par.AvgMarkDistance = TheConveyor.Devices.Probe.RecordedValue / TheConveyor.Par.HolesCounted;
+	TheSlicer.Status.AutoMode = TheConveyor.Status.AutoMode;
+	brsstrcpy(&TheSequencer.Par.CamSequence.Data.DataObjectName, &DataObjectName);
+	TheConveyor.Par.AxisPar.Velocity = TheConveyor.Par.ConveyorSpeed * ( 70.0 / 60.0);
 	
 	// FUBs calls
 	MpAxisBasic(&TheConveyor.Devices.Axis);

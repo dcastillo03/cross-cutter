@@ -5,6 +5,5 @@
     <Object Type="File">UnitTexts.tmx</Object>
     <Object Type="File">AlarmHistory.tmx</Object>
     <Object Type="File">AlarmList.tmx</Object>
-    <Object Type="File">AuditList.tmx</Object>
   </Objects>
 </Package>

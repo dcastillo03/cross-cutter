@@ -13,5 +13,13 @@
       <Variable Name="TheSequencer" RecursiveEnable="2" />
       <Variable Name="TheSlicer" RecursiveEnable="2" />
     </GlobalVariables>
+    <Task Name="Alarms">
+      <Variable Name="Alarm" RecursiveEnable="2" />
+    </Task>
+    <Task Name="Recipes">
+      <Variable Name="Recipe">
+        <Variable Name="UIConnect" RecursiveEnable="2" />
+      </Variable>
+    </Task>
   </Module>
 </OpcUaSource>

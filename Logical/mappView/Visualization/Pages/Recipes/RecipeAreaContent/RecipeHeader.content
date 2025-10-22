@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Content id="RecipeHeader" guid="a55f35a1-8bcc-4d67-a3d8-51ece34a03bf" height="80" width="1600" xmlns="http://www.br-automation.com/iat2015/contentDefinition/v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Widgets>
+    <Widget xsi:type="widgets.brease.DateTimeOutput" id="DateTime" top="20" left="1180" width="400" height="40" zIndex="0" fontSize="20px" />
+    <Widget xsi:type="widgets.brease.TextOutput" id="RecipesPageHeaderLabel" top="0" left="260" width="300" height="80" zIndex="1" value="Recipes" fontSize="30px" bold="true" />
+    <Widget xsi:type="widgets.brease.Image" id="BRLogoImage" top="0" left="0" width="160" height="80" zIndex="2" image="Media/B&amp;R_LOGO.png" />
+  </Widgets>
+</Content>

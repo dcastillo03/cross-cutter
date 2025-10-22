@@ -5,12 +5,15 @@
     <Page refId="LoginPage" />
     <Page refId="AutoPage" />
     <Page refId="ManualPage" />
-    <Page refId="Alarms" />
+    <Page refId="AlarmsPage" />
+    <Page refId="RecipesPage" />
+    <Page refId="SDMPage" />
   </Pages>
   <Navigations />
   <BindingsSets>
     <BindingsSet refId="AutoAreaContent" />
     <BindingsSet refId="ManualAreaContent" />
+    <BindingsSet refId="AlarmsAreaContent" />
   </BindingsSets>
   <EventBindingsSets>
     <EventBindingsSet refId="EventBindings" />
@@ -31,6 +34,12 @@
     <Content refId="AlarmsHeader" />
     <Content refId="AlarmsAreaContent" />
     <Content refId="AlarmsInfoContent" />
+    <Content refId="RecipeHeader" />
+    <Content refId="RecipeAreaContent" />
+    <Content refId="RecipeInfoContent" />
+    <Content refId="SDMHeader" />
+    <Content refId="SDMAreaContent" />
+    <Content refId="SDMInfoContent" />
   </Contents>
   <SnippetsSets />
   <VariablesSets />

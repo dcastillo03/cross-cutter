@@ -1,4 +1,9 @@
 VAR
 	CurrentMarkDistance : LREAL; (*Distance in mm of current set of holes*)
 	PreviousMarkDistance : LREAL; (*Distance in mm of previous set of holes*)
+	MAX_VALUE : LREAL := 100000;
+	ManualHomeDone : BOOL;
+	AutoHomeDone : BOOL;
+	DataAddress : McCamAutParType;
+	DataObjectName : STRING[32];
 END_VAR

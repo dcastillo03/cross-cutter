@@ -1,0 +1,3 @@
+VAR
+	Recipe : RecipeType; (*Recipe FUBs*)
+END_VAR

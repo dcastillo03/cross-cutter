@@ -5,5 +5,6 @@
     <Object Type="DataObject" Language="Apt">AcpParTab</Object>
     <Object Type="Package">Manager</Object>
     <Object Type="Package">Alarms</Object>
+    <Object Type="Package">Recipes</Object>
   </Objects>
 </Package>
